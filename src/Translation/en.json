@@ -1,0 +1,18 @@
+{
+	"trait.name.positive.adrenaline-junkie": "Adrenaline Junkie",
+	"trait.description.positive.adrenaline-junkie": "Moves faster when highly panicked.",
+	"trait.name.positive.athletic": "Athletic",
+	"trait.description.positive.athletic": "Can run faster and longer without tiring",
+	"trait.name.positive.brave": "Brave",
+	"trait.description.positive.brave": "Less prone to becoming panicked.",
+	"trait.name.positive.cats-eyes": "Cat's Eyes",
+	"trait.description.positive.cats-eyes": "Better vision at night.",
+	"trait.name.occupation.amateur-mechanic": "Amateur Mechanic",
+	"trait.description.occupation.amateur-mechanic": "Familiar with the maintenance and repair of all vehicle models on the roads of Kentucky",
+	"trait.name.hobby.amateur-mechanic": "Amateur Mechanic",
+	"trait.description.hobby.amateur-mechanic": "Has a detailed knowledge of common and heavy vehicle models and their repairs.",
+	"trait.name.hobby-occupation.nutritionist": "Nutritionist",
+	"trait.description.hobby-occupation.nutritionist": "Can see the nutritional values of any food.",
+	"trait.name.negative.agoraphobic": "Agoraphobic",
+	"trait.description.negative.agoraphobic": "Gets panicked when outdoors"
+}
