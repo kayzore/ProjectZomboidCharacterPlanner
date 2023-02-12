@@ -33,6 +33,14 @@ const positiveTraitsMock: Trait[] = [
 		points: { amount: 2, operator: "-" },
 		effects: [],
 	},
+	{
+		icon: "Dextrous.png",
+		name: "trait.name.positive.dextrous",
+		description: "trait.description.positive.dextrous",
+		type: ["Positive"],
+		points: { amount: 2, operator: "-" },
+		effects: [],
+	},
 ];
 
 export default positiveTraitsMock;

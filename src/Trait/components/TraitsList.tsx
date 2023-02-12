@@ -17,13 +17,13 @@ const TraitsList: React.FunctionComponent<Props> = (props: Props) => {
 			{traitsMock
 				.filter((trait) => trait.type.includes(traitType))
 				.map((trait) => (
-					<li key={trait.name} className="mb-10 flex flex-col">
-						<div className="flex">icon: <img src={`/assets/traits/${trait.icon}`} /></div>
-						name: {translate(trait.name)}<br />
-						description: {translate(trait.description)}<br />
-						type: {trait.type.toString()}<br />
-						points: {trait.points.operator}{trait.points.amount}<br />
-						effects: {trait.effects}<br />
+					<li key={trait.name} className="flex p-4 gap-2 items-center">
+						<img src={`/assets/traits/${trait.icon}`} />
+
+						<div className="flex justify-between w-full">
+							<div>{translate(trait.name)}</div>
+							<div>{trait.points.operator}{trait.points.amount}</div>
+						</div>
 					</li>
 				))
 			}

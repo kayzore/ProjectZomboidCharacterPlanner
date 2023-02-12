@@ -1,5 +1,6 @@
-import NavBar from "@shared/components/NavBar/NavBar";
 import React from "react";
+
+import NavBar from "@shared/components/NavBar";
 
 type Props = {
 	children: React.ReactElement | React.ReactElement[],
@@ -11,7 +12,10 @@ const MainLayout: React.FunctionComponent<Props> = (props: Props) => {
 	return (
 		<>
 			<NavBar />
-			{children}
+
+			<div className="container mx-auto mt-16">
+				{children}
+			</div>
 		</>
 	);
 };
