@@ -1,4 +1,4 @@
-import NavBar from "@shared/components/NavBar";
+import NavBar from "@shared/components/NavBar/NavBar";
 import React from "react";
 
 type Props = {
