@@ -1,15 +1,14 @@
+export type Locale = "fr" | "en";
 
-type Locale = "fr" | "en";
+export type Translations = { [key: string]: string };
 
-type Translations = { [key: string]: string };
-
-type Languages = {
+export type Languages = {
 	en: Translations,
 	fr: Translations,
 };
 
-type UseLocale = {
-	locale: string,
+export type UseLocale = {
+	locale: Locale,
 	setLocale: (newLocale: Locale) => void,
 	translate: (key: string) => string,
 };

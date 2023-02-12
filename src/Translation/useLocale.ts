@@ -1,12 +1,12 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 
-import { ALLOWED_LOCALES, DEFAULT_LOCALE } from "./constants";
+import { Languages, Locale, UseLocale } from "./model";
+import { ALLOWED_LOCALES } from "./constants";
+import { TranslationContext } from "./TranslationContext";
 import translations from "./index";
-import TranslationContext from "./TranslationContext";
 
 const useLocale = (): UseLocale => {
-	const localeContext = useContext(TranslationContext);
-	const [locale, setLocale] = useState<Locale>(DEFAULT_LOCALE);
+	const { locale, setLocale } = useContext(TranslationContext);
 
 	const translate = (key: string): string => {
 		const translationKey = (translations as Languages)?.[locale]?.[key];
@@ -26,10 +26,6 @@ const useLocale = (): UseLocale => {
 			setLocale(newLocale);
 		}
 	};
-
-	useEffect(() => {
-		handleSetLocale(localeContext as Locale);
-	}, [localeContext]);
 
 	return { locale, setLocale: handleSetLocale, translate };
 };
