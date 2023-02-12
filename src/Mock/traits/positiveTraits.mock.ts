@@ -33,38 +33,6 @@ const positiveTraitsMock: Trait[] = [
 		points: { amount: 2, operator: "-" },
 		effects: [],
 	},
-	{
-		icon: "TraitMechanic.png",
-		name: "trait.name.occupation.amateur-mechanic",
-		description: "trait.description.occupation.amateur-mechanic",
-		type: ["Occupation"],
-		points: { amount: 0, operator: null },
-		effects: [],
-	},
-	{
-		icon: "TraitMechanic.png",
-		name: "trait.name.hobby.amateur-mechanic",
-		description: "trait.description.hobby.amateur-mechanic",
-		type: ["Hobby"],
-		points: { amount: 5, operator: "-" },
-		effects: [],
-	},
-	{
-		icon: "TraitNutritionist.png",
-		name: "trait.name.hobby-occupation.nutritionist",
-		description: "trait.description.hobby-occupation.nutritionist",
-		type: ["Hobby", "Occupation"],
-		points: { amount: 4, operator: "-" },
-		effects: [],
-	},
-	{
-		icon: "TraitAgoraphobic.png",
-		name: "trait.name.negative.agoraphobic",
-		description: "trait.description.negative.agoraphobic",
-		type: ["Negative"],
-		points: { amount: 4, operator: "+" },
-		effects: [],
-	},
 ];
 
 export default positiveTraitsMock;
