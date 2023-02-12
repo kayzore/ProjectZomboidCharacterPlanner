@@ -17,8 +17,12 @@
     "jsx": "react-jsx",
     "types": ["node"],
     "paths": {
-      "@shared/*": ["./src/Shared/*"]
-    }
+			"@core/*": ["./src/Core/*"],
+			"@mock/*": ["./src/Mock/*"],
+			"@shared/*": ["./src/Shared/*"],
+			"@trait/*": ["./src/Trait/*"],
+			"@translation/*": ["./src/Translation/*"]
+		}
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
