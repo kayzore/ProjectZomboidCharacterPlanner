@@ -1,6 +1,6 @@
 import React from "react";
 
-import NavBar from "@shared/components/NavBar";
+import NavBar from "@shared/components/NavBar/NavBar";
 
 type Props = {
 	children: React.ReactElement | React.ReactElement[],
