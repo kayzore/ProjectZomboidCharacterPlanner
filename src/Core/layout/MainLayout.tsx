@@ -13,8 +13,10 @@ const MainLayout: React.FunctionComponent<Props> = (props: Props) => {
 		<>
 			<NavBar />
 
-			<div className="container mx-auto mt-16">
-				{children}
+			<div className="absolute top-0 right-0 bottom-0 left-0">
+				<div className="container mx-auto pt-32 pb-16 h-full overflow-hidden">
+					{children}
+				</div>
 			</div>
 		</>
 	);

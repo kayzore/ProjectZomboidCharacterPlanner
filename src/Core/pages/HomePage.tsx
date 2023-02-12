@@ -4,7 +4,6 @@ import MainLayout from "@core/layout/MainLayout";
 import ToggleLanguageButton from "@translation/components/ToggleLanguageButton";
 import OccupationContainer from "@trait/components/OccupationContainer";
 import PositiveNegativeContainer from "@trait/components/PositiveNegativeContainer";
-import HobbyContainer from "@trait/components/HobbyContainer";
 
 const HomePage: React.FunctionComponent = () => (
 	<MainLayout>
@@ -12,12 +11,10 @@ const HomePage: React.FunctionComponent = () => (
 
 		<ToggleLanguageButton />
 
-		<div className="flex gap-12 mt-8 w-full">
+		<div className="flex gap-12 w-full h-full pt-8 pb-8">
 			<OccupationContainer />
 
 			<PositiveNegativeContainer />
-
-			<HobbyContainer />
 		</div>
 	</MainLayout>
 );

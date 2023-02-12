@@ -13,7 +13,7 @@ const TraitsList: React.FunctionComponent<Props> = (props: Props) => {
 	const { translate } = useLocale();
 
 	return (
-		<>
+		<ul>
 			{traitsMock
 				.filter((trait) => trait.type.includes(traitType))
 				.map((trait) => (
@@ -27,7 +27,7 @@ const TraitsList: React.FunctionComponent<Props> = (props: Props) => {
 					</li>
 				))
 			}
-		</>
+		</ul>
 	);
 };
 

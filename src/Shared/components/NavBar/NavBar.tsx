@@ -4,7 +4,7 @@ import DropDownItem from '../DropDown/DropDownItem';
 
 const NavBar: React.FunctionComponent = () => {
 	return (
-		<nav className="sticky top-0 bg-white border-b  border-slate-900/10 h-16">
+		<nav className="sticky top-0 bg-white border-b  border-slate-900/10 h-16 z-20">
 			<div className="container flex flex-wrap justify-between items-center mx-auto h-full">
 				<a href="/" className="flex items-center">
 					<img alt="" src="/assets/images/spiffo.png" className="h-12 mr-3" />

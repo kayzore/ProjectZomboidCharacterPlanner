@@ -10,7 +10,7 @@ const Column: React.FunctionComponent<Props> = (props: Props) => {
 	const { children, className } = props;
 
 	return (
-		<div className={clsx("border-2 p-8 w-full", className)}>
+		<div className={clsx("flex flex-col border-2 p-8 w-full overflow-y-auto", className)}>
 			{children}
 		</div>
 	);

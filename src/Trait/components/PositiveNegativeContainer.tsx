@@ -8,13 +8,13 @@ const PositiveNegativeContainer: React.FunctionComponent = () => {
 	const { translate } = useLocale();
 
 	return (
-		<Column className="">
-			<div className="border-2">
+		<Column className="flex justify-between gap-8 overflow-y-auto">
+			<div className="border-2 h-1/2 overflow-y-auto">
 				<h2 className="">{translate("negative")}</h2>
 				<TraitsList traitType="Negative" />
 			</div>
 
-			<div className="border-2">
+			<div className="border-2 h-1/2 overflow-y-auto">
 				<h2 className="">{translate("positive")}</h2>
 				<TraitsList traitType="Positive" />
 			</div>

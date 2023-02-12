@@ -34,7 +34,7 @@ const positiveTraitsMock: Trait[] = [
 		effects: [],
 	},
 	{
-		icon: "Dextrous.png",
+		icon: "TraitDextrous.png",
 		name: "trait.name.positive.dextrous",
 		description: "trait.description.positive.dextrous",
 		type: ["Positive"],
