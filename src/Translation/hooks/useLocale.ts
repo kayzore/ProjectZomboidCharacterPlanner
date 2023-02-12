@@ -1,9 +1,9 @@
 import { useContext } from "react";
 
-import { Languages, Locale, UseLocale } from "./model";
-import { ALLOWED_LOCALES } from "./constants";
-import { TranslationContext } from "./TranslationContext";
-import translations from "./index";
+import { Languages, Locale, UseLocale } from "@translation/model";
+import { ALLOWED_LOCALES } from "@translation/constants";
+import { TranslationContext } from "@translation/components/TranslationContext";
+import translations from "@translation/index";
 
 const useLocale = (): UseLocale => {
 	const { locale, setLocale } = useContext(TranslationContext);

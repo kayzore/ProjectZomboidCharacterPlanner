@@ -1,7 +1,7 @@
 import React from "react";
 
 import { EN_LOCALE, FR_LOCALE } from "@translation/constants";
-import useLocale from "@translation/useLocale";
+import useLocale from "@translation/hooks/useLocale";
 
 const ToggleLanguageButton: React.FunctionComponent = () => {
 	const { locale, setLocale } = useLocale();

@@ -2,7 +2,7 @@ import React from "react";
 
 import { TraitType } from "@trait/model";
 import traitsMock from "@mock/traits/traits.mock";
-import useLocale from "@translation/useLocale";
+import useLocale from "@translation/hooks/useLocale";
 
 type Props = {
 	traitType: TraitType,

@@ -1,7 +1,7 @@
 import React, { createContext, useState } from "react";
 
-import { Locale } from "./model";
-import { DEFAULT_LOCALE } from "./constants";
+import { Locale } from "@translation/model";
+import { DEFAULT_LOCALE } from "@translation/constants";
 
 type Context = {
 	locale: Locale,

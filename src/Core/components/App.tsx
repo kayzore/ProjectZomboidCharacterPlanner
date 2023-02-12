@@ -1,6 +1,6 @@
 import React from "react";
 
-import { TranslationProvider } from "@translation/TranslationContext";
+import { TranslationProvider } from "@translation/components/TranslationContext";
 import HomePage from "@core/pages/HomePage";
 
 import "./App.scss";
