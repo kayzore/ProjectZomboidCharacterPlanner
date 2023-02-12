@@ -1,3 +1,4 @@
+import NavBar from "@shared/components/NavBar";
 import React from "react";
 
 type Props = {
@@ -9,6 +10,7 @@ const MainLayout: React.FunctionComponent<Props> = (props: Props) => {
 
 	return (
 		<>
+			<NavBar />
 			{children}
 		</>
 	);
