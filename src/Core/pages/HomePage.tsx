@@ -4,6 +4,7 @@ import MainLayout from "@core/layout/MainLayout";
 import ToggleLanguageButton from "@translation/components/ToggleLanguageButton";
 import OccupationContainer from "@trait/components/OccupationContainer";
 import PositiveNegativeContainer from "@trait/components/PositiveNegativeContainer";
+import SkillsContainer from "@skill/components/SkillsContainer";
 
 const HomePage: React.FunctionComponent = () => (
 	<MainLayout>
@@ -15,6 +16,8 @@ const HomePage: React.FunctionComponent = () => (
 			<OccupationContainer />
 
 			<PositiveNegativeContainer />
+
+			<SkillsContainer />
 		</div>
 	</MainLayout>
 );
