@@ -5,14 +5,15 @@ import useLocale from "@translation/hooks/useLocale";
 
 type Props = {
 	trait: Trait,
+	onClick: (trait: Trait) => void,
 };
 
 const TraitItem: React.FunctionComponent<Props> = (props: Props) => {
-	const { trait } = props;
+	const { onClick, trait } = props;
 	const { translate } = useLocale();
 
 	return (
-		<li className="flex p-4 gap-2 items-center hover:bg-gray-300 hover:cursor-pointer" onClick={(): void => void 0}>
+		<li className="flex p-4 gap-2 items-center hover:bg-gray-300 hover:cursor-pointer" onClick={() => onClick(trait)}>
 			<img src={`/assets/traits/${trait.icon}`} />
 
 			<div className="flex justify-between w-full">

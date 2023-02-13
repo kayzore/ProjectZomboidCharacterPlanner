@@ -9,14 +9,16 @@ const PositiveNegativeContainer: React.FunctionComponent = () => {
 
 	return (
 		<Column className="flex justify-between gap-8 overflow-y-auto">
-			<div className="border-2 h-1/2 overflow-y-auto">
+			<div className="h-1/2 overflow-y-auto">
 				<h2>{translate("positive")}</h2>
-				<TraitsList traitType="Positive" />
+				<TraitsList traitType="Positive" onTraitClick={(): void => void 0} />
 			</div>
 
-			<div className="border-2 h-1/2 overflow-y-auto">
+			<hr />
+
+			<div className="h-1/2 overflow-y-auto">
 				<h2>{translate("negative")}</h2>
-				<TraitsList traitType="Negative" />
+				<TraitsList traitType="Negative" onTraitClick={(): void => void 0} />
 			</div>
 		</Column>
 	);

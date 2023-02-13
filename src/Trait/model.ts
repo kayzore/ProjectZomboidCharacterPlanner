@@ -6,11 +6,16 @@ export type TraitPoint = {
 	operator: "+" | "-" | null,
 };
 
+export type TraitEffect = {
+	skill: string,
+	points: TraitPoint,
+};
+
 export type Trait = {
 	icon: string,
 	name: string,
 	description: string,
 	type: TraitType[],
 	points: TraitPoint,
-	effects: string[],
+	effects: TraitEffect[],
 };

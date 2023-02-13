@@ -1,4 +1,4 @@
-import { Trait } from "../../Trait/model";
+import { Trait } from "@trait/model";
 
 const occupationTraitsMock: Trait[] = [
 	{
@@ -7,7 +7,12 @@ const occupationTraitsMock: Trait[] = [
 		description: "trait.description.occupation.amateur-mechanic",
 		type: ["Occupation"],
 		points: { amount: 0, operator: null },
-		effects: [],
+		effects: [
+			{
+				skill: "skill.name.fitness",
+				points: { amount: 3, operator: "+" },
+			}
+		],
 	},
 ];
 
