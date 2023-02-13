@@ -1,30 +1,27 @@
 import React from "react";
 
-import { TraitType } from "@trait/model";
+import { Trait, TraitType } from "@trait/model";
+import TraitItem from "@trait/components/TraitItem";
 import traitsMock from "@mock/traits/traits.mock";
-import useLocale from "@translation/hooks/useLocale";
 
 type Props = {
 	traitType: TraitType,
+	onTraitClick: (column: TraitType, trait: Trait) => void,
 };
 
 const TraitsList: React.FunctionComponent<Props> = (props: Props) => {
-	const { traitType } = props;
-	const { translate } = useLocale();
+	const { onTraitClick, traitType } = props;
 
 	return (
 		<ul>
 			{traitsMock
 				.filter((trait) => trait.type.includes(traitType))
 				.map((trait) => (
-					<li key={trait.name} className="flex p-4 gap-2 items-center">
-						<img src={`/assets/traits/${trait.icon}`} />
-
-						<div className="flex justify-between w-full">
-							<div>{translate(trait.name)}</div>
-							<div>{trait.points.operator}{trait.points.amount}</div>
-						</div>
-					</li>
+					<TraitItem
+						onClick={(trait): void => onTraitClick(traitType, trait)}
+						key={trait.name}
+						trait={trait}
+					/>
 				))
 			}
 		</ul>
