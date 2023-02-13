@@ -12,6 +12,7 @@ export default defineConfig({
 			'@core': path.resolve(__dirname, 'src/Core'),
 			'@mock': path.resolve(__dirname, 'src/Mock'),
 			'@shared': path.resolve(__dirname, 'src/Shared'),
+			'@skill': path.resolve(__dirname, 'src/Skill'),
 			'@trait': path.resolve(__dirname, 'src/Trait')
 		}
   },
