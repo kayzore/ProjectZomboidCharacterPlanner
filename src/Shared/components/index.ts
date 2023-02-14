@@ -1,1 +1,1 @@
-export * from './NavBar/NavBar';
+export { default as Separator } from './Separator';
