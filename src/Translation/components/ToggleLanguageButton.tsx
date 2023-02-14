@@ -11,7 +11,7 @@ const ToggleLanguageButton: React.FunctionComponent = () => {
 	};
 
 	return (
-		<div onClick={toggleLocale}>Locale : {locale}</div>
+		<div onClick={toggleLocale} className="text-black dark:text-white">Locale : {locale}</div>
 	);
 };
 

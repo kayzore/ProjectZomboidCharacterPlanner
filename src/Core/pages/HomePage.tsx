@@ -31,11 +31,11 @@ const HomePage: React.FunctionComponent = () => {
 
 	return (
 		<MainLayout>
-			<h1 className="text-3xl font-bold underline lg:italic">Project Zomboid - Character Planner</h1>
+			<h1 className="text-3xl font-bold underline lg:italic text-black dark:text-white">Project Zomboid - Character Planner</h1>
 
 			<ToggleLanguageButton />
 
-			<div className="flex gap-12 w-full h-full pt-8 pb-8">
+			<div className="flex gap-12 w-full h-full pt-8 pb-8 text-black dark:text-white">
 				<OccupationContainer onTraitClick={onTraitClick} />
 
 				<PositiveNegativeContainer />
