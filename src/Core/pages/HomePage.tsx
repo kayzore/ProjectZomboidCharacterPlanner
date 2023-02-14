@@ -35,7 +35,7 @@ const HomePage: React.FunctionComponent = () => {
 
 			<ToggleLanguageButton />
 
-			<div className="flex gap-12 w-full h-full pt-8 pb-8 text-black dark:text-white">
+			<div className="flex gap-12 w-full h-full text-black dark:text-white">
 				<OccupationContainer onTraitClick={onTraitClick} />
 
 				<PositiveNegativeContainer />
