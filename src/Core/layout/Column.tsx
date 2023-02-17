@@ -3,14 +3,13 @@ import clsx from "clsx";
 
 type Props = {
 	children: React.ReactElement | React.ReactElement[],
-	className?: string,
-};
+} & React.HtmlHTMLAttributes<HTMLDivElement>;
 
 const Column: React.FunctionComponent<Props> = (props: Props) => {
-	const { children, className } = props;
+	const { children, ...otherProps } = props;
 
 	return (
-		<div className={clsx("flex flex-col border-2 dark:border-slate-400 p-8 w-full overflow-y-auto", className)}>
+		<div className={clsx("flex flex-col p-8 w-full overflow-y-auto", otherProps.className)}>
 			{children}
 		</div>
 	);

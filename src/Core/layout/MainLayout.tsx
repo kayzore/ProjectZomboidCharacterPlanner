@@ -5,11 +5,9 @@ import { MoonIcon } from "@heroicons/react/24/solid";
 import { GitHubIcon } from "@shared/icons";
 import { Action, Func } from "@shared/types";
 import useTheme from "@core/Theme/hooks/useTheme";
-import { NavBar, NavButton, NavLink } from "@shared/components/NavBar";
+import { NavBar, NavButton, NavLink, NavDropDown, NavDropDownItem } from "@shared/components/NavBar";
 import { Separator } from "@shared/components";
 import useLocale from "@translation/hooks/useLocale";
-import NavDropDown from "@shared/components/NavBar/NavDropDown";
-import NavDropDownItem from "@shared/components/NavBar/NavDropDownItem";
 import { Locale } from "@translation/model";
 
 type Props = {

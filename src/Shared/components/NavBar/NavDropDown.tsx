@@ -1,25 +1,15 @@
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
-import NavButton from "./NavButton";
-import { Action } from "@shared/types";
-import clsx from "clsx";
 
 type NavDropDownProps = {
 	children?: React.ReactNode;
 	title: string;
 };
 
-type MenuState = "open" | "closed";
-
 const NavDropDown: React.FunctionComponent<NavDropDownProps> = (props: NavDropDownProps) => {
 	const { children, title } = props;
-	const [isMenuOpen, setMenuState] = useState<boolean>(false);
-
-	const toggleMenu: Action<[]> = () => {
-		setMenuState(!isMenuOpen);
-	};
 
 	return (
 		<>

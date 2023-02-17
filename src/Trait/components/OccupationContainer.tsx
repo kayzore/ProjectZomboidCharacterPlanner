@@ -14,7 +14,7 @@ const OccupationContainer: React.FunctionComponent<Props> = (props: Props) => {
 	const { translate } = useLocale();
 
 	return (
-		<Column>
+		<Column className="bg-white shadow-md border dark:border-none dark:bg-slate-800 rounded-lg">
 			<h2 className="">{translate("occupation")}</h2>
 
 			<TraitsList traitType="Occupation" onTraitClick={onTraitClick} />

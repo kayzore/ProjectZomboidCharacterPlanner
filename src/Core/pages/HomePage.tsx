@@ -3,7 +3,6 @@ import React, {useCallback, useState} from "react";
 import { Character } from "../../Character/model";
 import { Trait, TraitType } from "@trait/model";
 import MainLayout from "@core/layout/MainLayout";
-import ToggleLanguageButton from "@translation/components/ToggleLanguageButton";
 import OccupationContainer from "@trait/components/OccupationContainer";
 import PositiveNegativeContainer from "@trait/components/PositiveNegativeContainer";
 import SkillsContainer from "@skill/components/SkillsContainer";
@@ -31,10 +30,6 @@ const HomePage: React.FunctionComponent = () => {
 
 	return (
 		<MainLayout>
-			<h1 className="text-3xl font-bold underline lg:italic text-black dark:text-white">Project Zomboid - Character Planner</h1>
-
-			<ToggleLanguageButton />
-
 			<div className="flex gap-12 w-full h-full pt-8 pb-8 text-black dark:text-white">
 				<OccupationContainer onTraitClick={onTraitClick} />
 
