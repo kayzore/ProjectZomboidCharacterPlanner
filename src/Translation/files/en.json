@@ -1,5 +1,114 @@
 {
 	"occupation": "Occupation",
+	"occupations": {
+		"uneployed": {
+			"title": "Unemployed",
+			"description": "8 free trait points."
+		},
+		"fireOfficer": {
+			"title": "Fire Officer",
+			"description": "Fire Officers can carry more and run faster for longer periods of time."
+		},
+		"policeOfficer": {
+			"title": "Police Officer",
+			"description": "Police Officers are very effective with firearms, as such this profession is great if you want to face the hordes of the undead Guns Blazin'."
+		},
+		"parkRanger": {
+			"title": "Park Ranger",
+			"description": ""
+		},
+		"constructionWorker": {
+			"title": "Construction Worker",
+			"description": ""
+		},
+		"securityGuard": {
+			"title": "Security Guard",
+			"description": ""
+		},
+		"carpenter": {
+			"title": "Carpenter",
+			"description": ""
+		},
+		"burglar": {
+			"title": "Burglar",
+			"description": ""
+		},
+		"chef": {
+			"title": "Chef",
+			"description": ""
+		},
+		"repairman": {
+			"title": "Repairman",
+			"description": ""
+		},
+		"farmer": {
+			"title": "Farmer",
+			"description": ""
+		},
+		"fisherman": {
+			"title": "Fisherman",
+			"description": ""
+		},
+		"doctor": {
+			"title": "Doctor",
+			"description": ""
+		},
+		"veteran": {
+			"title": "Veteran",
+			"description": ""
+		},
+		"nurse": {
+			"title": "Nurse",
+			"description": ""
+		},
+		"lumberjack": {
+			"title": "Lumberjack",
+			"description": ""
+		},
+		"fitnessInstructor": {
+			"title": "Fitness Instructor",
+			"description": ""
+		},
+		"burgerFlipper": {
+			"title": "Burger Flipper",
+			"description": ""
+		},
+		"electrician": {
+			"title": "Electrician",
+			"description": ""
+		},
+		"engineer": {
+			"title": "Engineer",
+			"description": ""
+		},
+		"metalworker": {
+			"title": "Metalworker",
+			"description": ""
+		},
+		"mechanic": {
+			"title": "Mechanic",
+			"description": ""
+		}
+	},
+	"traits": {
+		"positive": {
+			"adrenalineJunkie": {
+				"title": "Adrenaline Junkie",
+				"description": "Moves faster when highly panicked."
+			}
+		},
+		"negative": {
+			"agoraphobic": {
+				"title": "Agoraphobic",
+				"description": "Gets panicked when outdoors"
+			}
+		}
+	},
+	"skills": {
+		"fitness": "Fitness",
+		"strength": "Strength",
+		"sprinting": "Sprinting"
+	},
 	"trait.name.positive.adrenaline-junkie": "Adrenaline Junkie",
 	"trait.description.positive.adrenaline-junkie": "Moves faster when highly panicked.",
 	"trait.name.positive.athletic": "Athletic",

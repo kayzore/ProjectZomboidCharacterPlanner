@@ -9,7 +9,7 @@ const Column: React.FunctionComponent<Props> = (props: Props) => {
 	const { children, ...otherProps } = props;
 
 	return (
-		<div className={clsx("flex flex-col p-8 w-full overflow-y-auto", otherProps.className)}>
+		<div className={clsx("flex flex-col p-8 w-full", otherProps.className)}>
 			{children}
 		</div>
 	);

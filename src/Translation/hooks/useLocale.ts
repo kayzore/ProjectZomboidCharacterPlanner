@@ -1,31 +1,55 @@
+import { Dictionary } from '@shared/types';
 import { useContext } from "react";
 
-import { Languages, Locale, UseLocale } from "@translation/model";
-import { ALLOWED_LOCALES } from "@translation/constants";
+import { Locale } from "@translation/model";
 import { TranslationContext } from "@translation/components/TranslationContext";
-import translations from "@translation/index";
+import appTranslations from "@translation/index";
+import { flattenObject } from '@core/helpers';
+
+type UseLocale = {
+	locale: Locale,
+	setLocale: (newLocale: Locale) => void,
+	translate: (key: string) => string,
+};
 
 const useLocale = (): UseLocale => {
-	const { locale, setLocale } = useContext(TranslationContext);
+	const { locale, setLocale, translations, setTranslations } = useContext(TranslationContext);
 
 	const translate = (key: string): string => {
-		const translationKey = (translations as Languages)?.[locale]?.[key];
+		const translatedText = translations[key];
 
-		if (!translationKey) {
+		if (!translatedText) {
 			console.warn(`Translation key "${key}" not found for locale "${locale}"`);
+
 			return key;
 		}
 
-		return translationKey;
+		return translatedText;
 	};
 
 	const handleSetLocale = (newLocale: Locale): void => {
-		if (!ALLOWED_LOCALES.includes(newLocale)) {
-			console.error(`Locale "${newLocale}" do not exist`);
-		} else {
+		if (hasLocale(newLocale)) {
 			setLocale(newLocale);
+			loadTranslations(newLocale);
+		}
+		else {
+			console.error(`Locale "${newLocale}" do not exist`);
 		}
 	};
+
+	const loadTranslations = (locale: string): void => {
+		const translationResources = getLocaleTranslations(locale);
+
+		if (!translationResources) {
+			throw new Error(`Failed to load translation resources for locale '${locale}'.`);
+		}
+
+		setTranslations(flattenObject(translationResources) as Dictionary<string>);
+	};
+
+	const getLocaleTranslations = (locale: string): object => appTranslations[locale as keyof typeof appTranslations];
+
+	const hasLocale = (locale: string): boolean => getLocaleTranslations(locale) !== null;
 
 	return { locale, setLocale: handleSetLocale, translate };
 };

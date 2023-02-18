@@ -7,6 +7,7 @@ import OccupationContainer from "@trait/components/OccupationContainer";
 import PositiveNegativeContainer from "@trait/components/PositiveNegativeContainer";
 import SkillsContainer from "@skill/components/SkillsContainer";
 import { getNewCharacter } from "../../Character/helpers";
+import { Occupation } from "@mock/occupations.model";
 
 const HomePage: React.FunctionComponent = () => {
 	const [character, setCharacter] = useState<Character>(getNewCharacter());
@@ -28,10 +29,14 @@ const HomePage: React.FunctionComponent = () => {
 		}
 	}, [character]);
 
+	const onOccupationClick = useCallback((occupation: Occupation) => {
+		console.log(occupation);
+	}, [character]);
+
 	return (
 		<MainLayout>
 			<div className="flex gap-12 w-full h-full text-black dark:text-white">
-				<OccupationContainer onTraitClick={onTraitClick} />
+				<OccupationContainer onOccupationClick={onOccupationClick} />
 
 				<PositiveNegativeContainer />
 
