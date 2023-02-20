@@ -5,33 +5,33 @@ import { Action, Func } from "@shared/types";
 import ThemeContext from "../ThemeContext";
 
 type UseTheme = {
-	theme: string,
-	setTheme: Action<[string]>
+  theme: string,
+  setTheme: Action<[string]>
 };
 
 const useTheme: () => UseTheme = () => {
-	const { theme, setTheme } = useContext(ThemeContext);
+  const { theme, setTheme } = useContext(ThemeContext);
 
-	const getHtmlElement: Func<[], HTMLElement | null> = () => {
-		const elements = document.getElementsByTagName('html');
+  const getHtmlElement: Func<[], HTMLElement | null> = () => {
+    const elements = document.getElementsByTagName('html');
 
-		return elements && elements.length > 0 ? elements[0] : null;
-	};
+    return elements && elements.length > 0 ? elements[0] : null;
+  };
 
-	const handleSetTheme: Func<[string], void> = (newTheme: string) => {
-		const htmlElement: HTMLElement | null = getHtmlElement();
+  const handleSetTheme: Func<[string], void> = (newTheme: string) => {
+    const htmlElement: HTMLElement | null = getHtmlElement();
 
-		if (htmlElement) {
-			setTheme(newTheme);
-			htmlElement.classList.remove(theme);
-			htmlElement.classList.add(newTheme);
-		}
-	};
+    if (htmlElement) {
+      setTheme(newTheme);
+      htmlElement.classList.remove(theme);
+      htmlElement.classList.add(newTheme);
+    }
+  };
 
-	return {
-		theme: theme,
-		setTheme: handleSetTheme
-	};
+  return {
+    theme: theme,
+    setTheme: handleSetTheme
+  };
 };
 
 export default useTheme;

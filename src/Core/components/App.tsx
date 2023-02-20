@@ -5,11 +5,11 @@ import HomePage from "@core/pages/HomePage";
 import { ThemeProvider } from "@core/Theme/ThemeContext";
 
 const App: React.FunctionComponent = () => (
-	<TranslationProvider>
-		<ThemeProvider>
-			<HomePage />
-		</ThemeProvider>
-	</TranslationProvider>
+  <TranslationProvider>
+    <ThemeProvider>
+      <HomePage />
+    </ThemeProvider>
+  </TranslationProvider>
 );
 
 export default App;

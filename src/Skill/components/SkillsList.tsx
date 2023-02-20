@@ -5,21 +5,21 @@ import SkillItem from "@skill/components/SkillItem";
 import skillsMock from "@mock/skills/skills.mock";
 
 type Props = {
-	character: Character,
+  character: Character,
 };
 
 const SkillsList: React.FunctionComponent<Props> = (props: Props) => {
-	const { character } = props;
+  const { character } = props;
 
-	return (
-		<ul>
-			{skillsMock
-				.map((skill) => (
-					<SkillItem key={skill.name} skill={skill} character={character} />
-				))
-			}
-		</ul>
-	);
+  return (
+    <ul>
+      {skillsMock
+        .map((skill) => (
+          <SkillItem key={skill.name} skill={skill} character={character} />
+        ))
+      }
+    </ul>
+  );
 };
 
 export default SkillsList;

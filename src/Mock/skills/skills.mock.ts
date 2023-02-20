@@ -7,12 +7,12 @@ import firearmSkillsMock from "@mock/skills/firearmSkills.mock";
 import survivalistSkillsMock from "@mock/skills/survivalistSkills.mock";
 
 const skillsMock: Array<Skill> = [
-	...passiveSkillsMock,
-	...agilitySkillsMock,
-	...combatSkillsMock,
-	...craftingSkillsMock,
-	...firearmSkillsMock,
-	...survivalistSkillsMock,
+  ...passiveSkillsMock,
+  ...agilitySkillsMock,
+  ...combatSkillsMock,
+  ...craftingSkillsMock,
+  ...firearmSkillsMock,
+  ...survivalistSkillsMock,
 ];
 
 export default skillsMock;
