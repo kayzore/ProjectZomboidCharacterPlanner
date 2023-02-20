@@ -17,8 +17,10 @@ const OccupationContainer: React.FunctionComponent<Props> = (props: Props) => {
 	const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
 	const handleOccupationClick = (occupation: Occupation, index: number): void => {
-		setActiveIndex(index);
-		onOccupationClick(occupation);
+		if (activeIndex !== index) {
+			setActiveIndex(index);
+			onOccupationClick(occupation);
+		}
 	};
 
 	return (

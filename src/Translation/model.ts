@@ -6,4 +6,4 @@ export type Locale = 'fr' | 'en';
 /**
  * Gets the default application locale.
  */
-export const DefaultLocale: Locale = 'fr';
+export const DefaultLocale: Locale = 'en';
