@@ -7,13 +7,12 @@ export default defineConfig({
   plugins: [react()],
 	resolve: {
     alias: {
-			'@': path.resolve(__dirname, 'src'),
-			'@translation': path.resolve(__dirname, 'src/Translation'),
-			'@core': path.resolve(__dirname, 'src/Core'),
-			'@mock': path.resolve(__dirname, 'src/Mock'),
+			'@app': path.resolve(__dirname, 'src'),
 			'@shared': path.resolve(__dirname, 'src/Shared'),
-			'@skill': path.resolve(__dirname, 'src/Skill'),
-			'@trait': path.resolve(__dirname, 'src/Trait')
+			'@pages': path.resolve(__dirname, 'src/pages'),
+      '@layout': path.resolve(__dirname, 'src/layout'),
+      '@types': path.resolve(__dirname, 'src/types'),
+      '@assets': path.resolve(__dirname, 'src/assets')
 		}
   },
 });

@@ -17,12 +17,12 @@
     "jsx": "react-jsx",
     "types": ["node"],
     "paths": {
-			"@core/*": ["./src/Core/*"],
-			"@mock/*": ["./src/Mock/*"],
-			"@shared/*": ["./src/Shared/*"],
-			"@skill/*": ["./src/Skill/*"],
-			"@trait/*": ["./src/Trait/*"],
-			"@translation/*": ["./src/Translation/*"]
+      "@app/*": ["./src/*"],
+			"@shared/*": ["./src/shared/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@layout/*": ["./src/layout/*"],
+      "@types/*": ["./src/types/*"],
+      "@assets/*": ["./src/assets/*"]
 		}
   },
   "include": ["src"],
