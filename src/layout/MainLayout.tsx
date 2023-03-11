@@ -5,7 +5,7 @@ import { MoonIcon } from "@heroicons/react/24/solid";
 
 import { Separator } from "./components";
 import { NavBar, NavButton, NavLink, NavDropDown, NavDropDownItem } from "./components/NavBar";
-import { GitHubIcon } from "@shared/icons";
+// import { GitHubIcon } from "@shared/icons";
 import { Locale } from "@app/types";
 import { useLocale, useTheme } from "@app/hooks";
 
@@ -43,7 +43,7 @@ const MainLayout: React.FunctionComponent<Props> = (props: Props) => {
           </NavDropDown>
           <Separator orientation="Vertical" className="m-2.5 h-6" />
           <NavLink id="github-repository" href="https://github.com/Eastrall/ProjectZomboidCharacterPlanner">
-            <GitHubIcon className="h-6 w-6 fill-slate-900 dark:fill-white" />
+            {/* <GitHubIcon className="h-6 w-6 fill-slate-900 dark:fill-white" /> */}
           </NavLink>
           <NavButton id="theme-switcher" onClick={toggleTheme}>
             <SunIcon className="w-6 h-6 block dark:hidden" />
