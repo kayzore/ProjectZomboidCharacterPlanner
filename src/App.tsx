@@ -1,10 +1,14 @@
 import React from "react";
-import "./App.scss";
 
-const App: React.FunctionComponent = () => {
-	return (
-    <h1 className="text-3xl font-bold underline lg:italic">Project Zomboid - Character Planner</h1>
-  );
-};
+import HomePage from "@app/pages/home/HomePage";
+import { ThemeProvider, TranslationProvider } from "./providers";
+
+const App: React.FunctionComponent = () => (
+  <TranslationProvider>
+    <ThemeProvider>
+      <HomePage />
+    </ThemeProvider>
+  </TranslationProvider>
+);
 
 export default App;

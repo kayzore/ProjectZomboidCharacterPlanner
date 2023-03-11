@@ -1,0 +1,19 @@
+{
+  "occupation": "Occupation",
+  "trait.name.positive.adrenaline-junkie": "Accro à l'adrénaline",
+  "trait.description.positive.adrenaline-junkie": "Moves faster when highly panicked.",
+  "trait.name.positive.athletic": "Athlétique",
+  "trait.description.positive.athletic": "Peut courir plus vite et plus longtemps sans se fatiguer",
+  "trait.name.positive.brave": "Courageux",
+  "trait.description.positive.brave": "Moins enclin à la panique.",
+  "trait.name.positive.cats-eyes": "Les yeux du chat",
+  "trait.description.positive.cats-eyes": "Une meilleure vision de nuit.",
+  "trait.name.occupation.amateur-mechanic": "Mécanicien amateur",
+  "trait.description.occupation.amateur-mechanic": "Connaît l'entretien et la réparation de tous les modèles de véhicules sur les routes du Kentucky.",
+  "trait.name.hobby.amateur-mechanic": "Mécanicien amateur",
+  "trait.description.hobby.amateur-mechanic": "Possède une connaissance détaillée des modèles de véhicules courants et lourds et de leurs réparations.",
+  "trait.name.hobby-occupation.nutritionist": "Nutritionniste",
+  "trait.description.hobby-occupation.nutritionist": "Peut voir les valeurs nutritionnelles de n'importe quel aliment.",
+  "trait.name.negative.agoraphobic": "Agoraphobe",
+  "trait.description.negative.agoraphobic": "Panique lorsqu'il est à l'extérieur"
+}
