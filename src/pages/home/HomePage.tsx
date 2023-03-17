@@ -1,19 +1,15 @@
-// import { useCallback, useState } from "react";
-
-// import { Character } from "../../Character/model";
-// import { Trait, TraitType } from "@trait/model";
-import { Occupation } from "@app/types";
-import MainLayout from "@layout/MainLayout";
 import { useCallback } from "react";
+
+import { useLocale } from "@app/hooks";
+import { Occupation } from "@app/types";
+import { PositiveTraits, NegativeTraits } from "@app/data";
+import MainLayout from "@layout/MainLayout";
+import { Column, Separator } from "@app/layout/components";
 import OccupationContainer from "./components/OccupationContainer";
-import PositiveNegativeContainer from "./components/PositiveNegativeContainer";
-// import OccupationContainer from "@trait/components/OccupationContainer";
-// import PositiveNegativeContainer from "@trait/components/PositiveNegativeContainer";
-// import SkillsContainer from "@skill/components/SkillsContainer";
-// import { getNewCharacter } from "../../Character/helpers";
-// import { Occupation } from "@mock/occupations.model";
+import TraitsList from "./components/TraitsList";
 
 const HomePage: React.FunctionComponent = () => {
+  const { translate } = useLocale();
   // const [character, setCharacter] = useState<Character>(getNewCharacter());
 
   // const onTraitClick = useCallback((column: TraitType, trait: Trait): void => {
@@ -40,11 +36,32 @@ const HomePage: React.FunctionComponent = () => {
   return (
     <MainLayout>
       <div className="flex gap-12 w-full h-full text-black dark:text-white">
-        <OccupationContainer onOccupationClick={onOccupationClick} />
 
-        <PositiveNegativeContainer />
+        <Column className="bg-white shadow-md border dark:border-none dark:bg-slate-800 rounded-lg">
+          <h2 className="text-xl font-medium">{translate("occupation")}</h2>
+          <OccupationContainer onOccupationClick={onOccupationClick} />
+        </Column>
 
-        {/* <SkillsContainer character={character} /> */}
+        <Column className="bg-white shadow-md border dark:border-none dark:bg-slate-800 rounded-lg">
+          <div className="h-1/2 flex flex-col">
+            <h2 className="text-xl font-medium">{translate("traits.positive.title")}</h2>
+            <TraitsList traits={PositiveTraits} onTraitClick={(): void => void 0} />
+          </div>
+
+          <Separator orientation="Horizontal" />
+
+          <div className="h-1/2 flex flex-col pb-6">
+            <h2 className="text-xl font-medium">{translate("traits.negative.title")}</h2>
+            <TraitsList traits={NegativeTraits} onTraitClick={(): void => void 0} />
+          </div>
+        </Column>
+
+        <Column className="bg-white shadow-md border dark:border-none dark:bg-slate-800 rounded-lg">
+          <h2 className="text-xl font-medium">
+            Skills
+          </h2>
+          {/* <SkillsContainer character={character} /> */}
+        </Column>
       </div>
     </MainLayout>
   );

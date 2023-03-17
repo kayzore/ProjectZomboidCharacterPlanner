@@ -92,6 +92,7 @@
   },
   "traits": {
     "positive": {
+      "title": "Positive traits",
       "adrenalineJunkie": {
         "title": "Adrenaline Junkie",
         "description": "Moves faster when highly panicked."
@@ -194,6 +195,7 @@
       }
     },
     "negative": {
+      "title": "Negative traits",
       "agoraphobic": {
         "title": "Agoraphobic",
         "description": "Gets panicked when outdoors"
