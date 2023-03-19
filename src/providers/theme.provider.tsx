@@ -1,16 +1,17 @@
-import { createContext, useState } from "react";
+import { createContext, FunctionComponent, ReactNode } from "react";
 
 import { Func } from "@app/shared/types";
+import { useLocalStorage } from "@app/hooks";
 
-const DefaultTheme: string = 'default';
+export const DefaultTheme: string = 'default';
 
 type Context = {
   theme: string,
-  setTheme: Func<[string], void>
+  setTheme: Func<[string], void>,
 };
 
 type ThemeContextProps = {
-  children: React.ReactNode | React.ReactNode
+  children: ReactNode
 };
 
 const ThemeContext = createContext({
@@ -18,9 +19,9 @@ const ThemeContext = createContext({
   setTheme: () => void 0
 } as Context);
 
-const ThemeProvider: React.FunctionComponent<ThemeContextProps> = (props: ThemeContextProps) => {
+const ThemeProvider: FunctionComponent<ThemeContextProps> = (props: ThemeContextProps) => {
   const { children } = props;
-  const [theme, setTheme] = useState(DefaultTheme);
+  const [theme, setTheme] = useLocalStorage("theme", DefaultTheme);
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme } as Context}>

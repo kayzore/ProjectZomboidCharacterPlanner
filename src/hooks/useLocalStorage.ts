@@ -1,9 +1,13 @@
 import { useState } from "react";
-import { Func } from "@shared/types";
 
-const useLocalStorage = (key: string, initialValue: any): [any, Func<[any], void>] => {
+import { Func } from "@shared/types";
+import hasWindow from "@app/core/hasWindow.helper";
+
+type UseLocalStorage = [unknown, Func<[unknown], void>];
+
+export const useLocalStorage = (key: string, initialValue: unknown): UseLocalStorage => {
   const [storedValue, setStoredValue] = useState(() => {
-    if (!window) {
+    if (!hasWindow()) {
       return initialValue;
     }
 
@@ -16,13 +20,13 @@ const useLocalStorage = (key: string, initialValue: any): [any, Func<[any], void
     }
   });
 
-  const setValue = (value: any): void => {
+  const setValue = (value: unknown): void => {
     try {
       const valueToStore = value instanceof Function ? value(storedValue) : value;
 
       setStoredValue(valueToStore);
 
-      if (window) {
+      if (hasWindow()) {
         window.localStorage.setItem(key, JSON.stringify(valueToStore));
       }
     } catch (error) {
@@ -32,5 +36,3 @@ const useLocalStorage = (key: string, initialValue: any): [any, Func<[any], void
 
   return [storedValue, setValue];
 };
-
-export default useLocalStorage;

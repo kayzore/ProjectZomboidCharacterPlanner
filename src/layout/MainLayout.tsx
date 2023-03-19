@@ -1,4 +1,4 @@
-import React from "react";
+import { FunctionComponent, ReactElement } from "react";
 
 import { SunIcon } from "@heroicons/react/24/outline";
 import { MoonIcon } from "@heroicons/react/24/solid";
@@ -10,10 +10,10 @@ import { Locale } from "@app/types";
 import { useLocale, useTheme } from "@app/hooks";
 
 type Props = {
-  children: React.ReactElement | React.ReactElement[];
+  children: ReactElement | ReactElement[];
 };
 
-const MainLayout: React.FunctionComponent<Props> = (props: Props) => {
+const MainLayout: FunctionComponent<Props> = (props: Props) => {
   const { children } = props;
   const { theme, setTheme } = useTheme();
   const { locale, setLocale } = useLocale();
