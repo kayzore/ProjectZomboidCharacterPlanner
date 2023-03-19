@@ -3,9 +3,9 @@ import { useState } from "react";
 import { Func } from "@shared/types";
 import hasWindow from "@app/core/hasWindow.helper";
 
-type UseLocalStorage = [unknown, Func<[unknown], void>];
+type UseLocalStorage<T> = [T, Func<[T], void>];
 
-export const useLocalStorage = (key: string, initialValue: unknown): UseLocalStorage => {
+export const useLocalStorage = <T>(key: string, initialValue: unknown): UseLocalStorage<T> => {
   const [storedValue, setStoredValue] = useState(() => {
     if (!hasWindow()) {
       return initialValue;

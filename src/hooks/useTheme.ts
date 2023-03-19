@@ -1,10 +1,10 @@
 import { useContext, useEffect } from "react";
 
-import { ThemeContext } from "@app/providers";
+import { Theme, ThemeContext } from "@app/providers";
 
 type UseTheme = {
-  theme: string,
-  setTheme: (newTheme: string) => void,
+  theme: Theme,
+  setTheme: (newTheme: Theme) => void,
 };
 
 export const useTheme: () => UseTheme = () => {
@@ -25,7 +25,7 @@ export const useTheme: () => UseTheme = () => {
     }
   };
 
-  const handleSetTheme = (newTheme: string): void => {
+  const handleSetTheme = (newTheme: Theme): void => {
     setTheme(newTheme);
     updateDOMWithTheme(newTheme);
   };
