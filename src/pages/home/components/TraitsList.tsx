@@ -1,27 +1,20 @@
-// Eastrall: Putting types here temporary
+import { Trait } from "@app/types";
 
-import { Trait, TraitType } from "@app/types";
 import TraitItem from "./TraitItem";
-import traitsMock from "@app/data/traits/traits.mock";
 
 type Props = {
-  traitType: TraitType,
-  onTraitClick: (column: TraitType, trait: Trait) => void,
+  traits: Trait[],
+  onTraitClick: (trait: Trait) => void,
 };
 
 const TraitsList: React.FunctionComponent<Props> = (props: Props) => {
-  const { onTraitClick, traitType } = props;
+  const { traits, onTraitClick } = props;
 
   return (
-    <ul>
-      {traitsMock
-        .filter((trait) => trait.type?.includes(traitType))
-        .map((trait) => (
-          <TraitItem
-            onClick={(trait): void => onTraitClick(traitType, trait)}
-            key={trait.name}
-            trait={trait}
-          />
+    <ul className="mt-6 pr-2 overflow-y-auto">
+      {
+        traits.map((trait: Trait) => (
+          <TraitItem key={trait.name} trait={trait} onTraitClick={(trait: Trait): void => onTraitClick(trait)} />
         ))
       }
     </ul>

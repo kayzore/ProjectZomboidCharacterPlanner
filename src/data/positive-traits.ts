@@ -3,170 +3,218 @@ import { Trait } from "@app/types";
 export const PositiveTraits: Trait[] = [
   {
     id: 'ADREDALINE_JUNKIE',
-    name: 'traits.positive.adredalineJunkie.name',
-    description: 'traits.positive.adredalineJunkie.description',
-    icon: 'TraitAdrenalineJunkie.png',
-    points: { operator: "-", amount: 8 }
+    name: 'traits.positive.adrenalineJunkie.title',
+    description: 'traits.positive.adrenalineJunkie.description',
+    icon: 'positive/TraitAdrenalineJunkie.png',
+    points: -8,
+    effect: null,
+    excluded: null
   },
   {
     id: 'ATHLETIC',
-    name: 'traits.positive.athletic.name',
+    name: 'traits.positive.athletic.title',
     description: 'traits.positive.athletic.description',
-    icon: 'TraitAthletic.png',
-    points: { operator: "-", amount: 10 }
+    icon: 'positive/TraitAthletic.png',
+    points: -10,
+    effect: null,
+    excluded: null
   },
   {
     id: 'BRAVE',
-    name: 'traits.positive.brave.name',
+    name: 'traits.positive.brave.title',
     description: 'traits.positive.brave.description',
-    icon: 'TraitBrave.png',
-    points: { operator: "-", amount: 4 }
+    icon: 'positive/TraitBrave.png',
+    points: -4,
+    effect: null,
+    excluded: null
   },
   {
     id: 'CATS_EYES',
-    name: 'traits.positive.catsEyes.name',
+    name: 'traits.positive.catsEyes.title',
     description: 'traits.positive.catsEyes.description',
-    icon: 'TraitCatsEyes.png',
-    points: { operator: "-", amount: 2 }
+    icon: 'positive/TraitCatsEyes.png',
+    points: -2,
+    effect: null,
+    excluded: null
   },
   {
     id: 'DEXTROUS',
-    name: 'traits.positive.dextrous.name',
+    name: 'traits.positive.dextrous.title',
     description: 'traits.positive.dextrous.description',
-    icon: 'Dextrous.png',
-    points: { operator: "-", amount: 2 }
+    icon: 'positive/TraitDextrous.png',
+    points: -2,
+    effect: null,
+    excluded: null
   },
   {
     id: 'EAGLE_EYED',
-    name: 'traits.positive.eagleEyed.name',
+    name: 'traits.positive.eagleEyed.title',
     description: 'traits.positive.eagleEyed.description',
-    icon: 'EagleEyed.png',
-    points: { operator: "-", amount: 6 }
+    icon: 'positive/TraitEagleEyed.png',
+    points: -6,
+    effect: null,
+    excluded: null
   },
   {
     id: 'FAST_HEALER',
-    name: 'traits.positive.fastHealer.name',
+    name: 'traits.positive.fastHealer.title',
     description: 'traits.positive.fastHealer.description',
-    icon: 'FastHealer.png',
-    points: { operator: "-", amount: 6 }
+    icon: 'positive/TraitFastHealer.png',
+    points: -6,
+    effect: null,
+    excluded: null
   },
   {
     id: 'FAST_READER',
-    name: 'traits.positive.fastReader.name',
+    name: 'traits.positive.fastReader.title',
     description: 'traits.positive.fastReader.description',
-    icon: 'FastReader.png',
-    points: { operator: "-", amount: 2 }
+    icon: 'positive/TraitFastReader.png',
+    points: -2,
+    effect: null,
+    excluded: null
   },
   {
     id: 'FIT',
-    name: 'traits.positive.fit.name',
+    name: 'traits.positive.fit.title',
     description: 'traits.positive.fit.description',
-    icon: 'Fit.png',
-    points: { operator: "-", amount: 6 }
+    icon: 'positive/TraitFit.png',
+    points: -6,
+    effect: null,
+    excluded: null
   },
   {
     id: 'GRACEFUL',
-    name: 'traits.positive.graceful.name',
+    name: 'traits.positive.graceful.title',
     description: 'traits.positive.graceful.description',
-    icon: 'Graceful.png',
-    points: { operator: "-", amount: 4 }
+    icon: 'positive/TraitGraceful.png',
+    points: -4,
+    effect: null,
+    excluded: null
   },
   {
     id: 'INCONSPICUOUS',
-    name: 'traits.positive.inconspicuous.name',
+    name: 'traits.positive.inconspicuous.title',
     description: 'traits.positive.inconspicuous.description',
-    icon: 'Inconspicuous.png',
-    points: { operator: "-", amount: 4 }
+    icon: 'positive/TraitInconspicuous.png',
+    points: -4,
+    effect: null,
+    excluded: null
   },
   {
     id: 'IRON_GUT',
-    name: 'traits.positive.ironGut.name',
+    name: 'traits.positive.ironGut.title',
     description: 'traits.positive.ironGut.description',
-    icon: 'IronGut.png',
-    points: { operator: "-", amount: 3 }
+    icon: 'positive/TraitIronGut.png',
+    points: -3,
+    effect: null,
+    excluded: null
   },
   {
     id: 'KEEN_HEARING',
-    name: 'traits.positive.keenHearing.name',
+    name: 'traits.positive.keenHearing.title',
     description: 'traits.positive.keenHearing.description',
-    icon: 'KeenHearing.png',
-    points: { operator: "-", amount: 6 }
+    icon: 'positive/TraitKeenHearing.png',
+    points: -6,
+    effect: null,
+    excluded: null
   },
   {
     id: 'LIGHT_EATER',
-    name: 'traits.positive.lightEater.name',
+    name: 'traits.positive.lightEater.title',
     description: 'traits.positive.lightEater.description',
-    icon: 'LightEater.png',
-    points: { operator: "-", amount: 4 }
+    icon: 'positive/TraitLightEater.png',
+    points: -4,
+    effect: null,
+    excluded: null
   },
   {
     id: 'LOW_THIRST',
-    name: 'traits.positive.lowThirst.name',
+    name: 'traits.positive.lowThirst.title',
     description: 'traits.positive.lowThirst.description',
-    icon: 'LowThirst.png',
-    points: { operator: "-", amount: 6 }
+    icon: 'positive/TraitLowThirst.png',
+    points: -6,
+    effect: null,
+    excluded: null
   },
   {
     id: 'LUCKY',
-    name: 'traits.positive.lucky.name',
+    name: 'traits.positive.lucky.title',
     description: 'traits.positive.lucky.description',
-    icon: 'Lucky.png',
-    points: { operator: "-", amount: 4 }
+    icon: 'positive/TraitLucky.png',
+    points: -4,
+    effect: null,
+    excluded: null
   },
   {
     id: 'ORGANIZED',
-    name: 'traits.positive.organized.name',
+    name: 'traits.positive.organized.title',
     description: 'traits.positive.organized.description',
-    icon: 'Organized.png',
-    points: { operator: "-", amount: 6 }
+    icon: 'positive/TraitOrganized.png',
+    points: -6,
+    effect: null,
+    excluded: null
   },
   {
     id: 'OUTDOORSMAN',
-    name: 'traits.positive.outdoorsman.name',
+    name: 'traits.positive.outdoorsman.title',
     description: 'traits.positive.outdoorsman.description',
-    icon: 'Outdoorsman.png',
-    points: { operator: "-", amount: 2 }
+    icon: 'positive/TraitOutdoorsman.png',
+    points: -2,
+    effect: null,
+    excluded: null
   },
   {
     id: 'RESILIENT',
-    name: 'traits.positive.resilient.name',
+    name: 'traits.positive.resilient.title',
     description: 'traits.positive.resilient.description',
-    icon: 'Resilient.png',
-    points: { operator: "-", amount: 4 }
+    icon: 'positive/TraitResilient.png',
+    points: -4,
+    effect: null,
+    excluded: null
   },
   {
     id: 'SPEED_DEMON',
-    name: 'traits.positive.speedDemon.name',
+    name: 'traits.positive.speedDemon.title',
     description: 'traits.positive.speedDemon.description',
-    icon: 'SpeedDemon.png',
-    points: { operator: "-", amount: 1 }
+    icon: 'positive/TraitRoadRage.png',
+    points: -1,
+    effect: null,
+    excluded: null
   },
   {
     id: 'STOUT',
-    name: 'traits.positive.stout.name',
+    name: 'traits.positive.stout.title',
     description: 'traits.positive.stout.description',
-    icon: 'Stout.png',
-    points: { operator: "-", amount: 6 }
+    icon: 'positive/TraitStout.png',
+    points: -6,
+    effect: null,
+    excluded: null
   },
   {
     id: 'STRONG',
-    name: 'traits.positive.strong.name',
+    name: 'traits.positive.strong.title',
     description: 'traits.positive.strong.description',
-    icon: 'Strong.png',
-    points: { operator: "-", amount: 10 }
+    icon: 'positive/TraitStrong.png',
+    points: -10,
+    effect: null,
+    excluded: null
   },
   {
     id: 'THICK_SKINNED',
-    name: 'traits.positive.thickSkinned.name',
+    name: 'traits.positive.thickSkinned.title',
     description: 'traits.positive.thickSkinned.description',
-    icon: 'ThickSkinned.png',
-    points: { operator: "-", amount: 8 }
+    icon: 'positive/TraitThickSkinned.png',
+    points: -8,
+    effect: null,
+    excluded: null
   },
   {
     id: 'WAKEFUL',
-    name: 'traits.positive.wakeful.name',
+    name: 'traits.positive.wakeful.title',
     description: 'traits.positive.wakeful.description',
-    icon: 'Wakeful.png',
-    points: { operator: "-", amount: 2 }
+    icon: 'positive/TraitWakeful.png',
+    points: -2,
+    effect: null,
+    excluded: null
   },
 ];
