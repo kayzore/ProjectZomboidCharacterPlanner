@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, FunctionComponent, ReactElement, useEffect, useState } from "react";
 
 import { flattenObject } from '@app/helpers';
 import { Locale } from "@app/types";
@@ -6,6 +6,7 @@ import { Dictionary } from "@app/shared/types";
 
 import en from '@assets/translations/en.json';
 import fr from '@assets/translations/fr.json';
+import { useLocalStorage } from "@app/hooks";
 
 /**
  * Gets the available translations.
@@ -57,18 +58,18 @@ type Context = {
 };
 
 type Props = {
-  children: React.ReactElement | React.ReactElement[]
+  children: ReactElement | ReactElement[]
 };
 
 const TranslationContext = createContext({
   locale: DefaultLocale,
-  setLocale: () => void 0,
   translations: {},
+  setLocale: () => void 0,
   setTranslations: () => void 0,
 } as Context);
 
-const TranslationProvider: React.FunctionComponent<Props> = (props: Props) => {
-  const [locale, setLocale] = useState<Locale>(DefaultLocale);
+const TranslationProvider: FunctionComponent<Props> = (props: Props) => {
+  const [locale, setLocale] = useLocalStorage<Locale>("locale", DefaultLocale);
   const [translations, setTranslations] = useState(getTranslationDictionary(DefaultLocale));
 
   const loadTranslations = (locale: string): void => {
@@ -78,9 +79,12 @@ const TranslationProvider: React.FunctionComponent<Props> = (props: Props) => {
   const handleSetLocale = (newLocale: Locale): void => {
     if (hasLocale(newLocale)) {
       setLocale(newLocale);
-      loadTranslations(newLocale);
     }
   };
+
+  useEffect(() => {
+    loadTranslations(locale);
+  }, [locale]);
 
   return (
     <TranslationContext.Provider value={{
