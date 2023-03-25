@@ -1,16 +1,16 @@
-import { useCallback } from "react";
+import { FunctionComponent } from "react";
 
 import { useLocale } from "@app/hooks";
-import { Occupation } from "@app/types";
 import { PositiveTraits, NegativeTraits } from "@app/data";
 import MainLayout from "@layout/MainLayout";
 import { Column, Separator } from "@app/layout/components";
 import OccupationContainer from "./components/OccupationContainer";
 import TraitsList from "./components/TraitsList";
+import { useCharacterService } from "@app/hooks";
 
-const HomePage: React.FunctionComponent = () => {
+const HomePage: FunctionComponent = () => {
   const { translate } = useLocale();
-  // const [character, setCharacter] = useState<Character>(getNewCharacter());
+  const { setOccupation } = useCharacterService();
 
   // const onTraitClick = useCallback((column: TraitType, trait: Trait): void => {
   //   if (column === "Occupation") {
@@ -29,17 +29,13 @@ const HomePage: React.FunctionComponent = () => {
   //   }
   // }, [character]);
 
-  const onOccupationClick = useCallback((occupation: Occupation) => {
-    console.log(occupation);
-  }, []);
-
   return (
     <MainLayout>
       <div className="flex gap-12 w-full h-full text-black dark:text-white">
 
         <Column className="bg-white shadow-md border dark:border-none dark:bg-slate-800 rounded-lg">
           <h2 className="text-xl font-medium">{translate("occupation")}</h2>
-          <OccupationContainer onOccupationClick={onOccupationClick} />
+          <OccupationContainer onOccupationClick={setOccupation} />
         </Column>
 
         <Column className="bg-white shadow-md border dark:border-none dark:bg-slate-800 rounded-lg">
