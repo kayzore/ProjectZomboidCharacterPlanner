@@ -2,7 +2,7 @@ import { describe, it, expect, vi } from 'vitest';
 import { act, renderHook } from '@testing-library/react';
 import { v4 as uuid } from "uuid";
 
-import { Character } from "@appTypes/character.type";
+import { Character } from "@app/types/character.type";
 import { useCharacterService } from "@app/hooks";
 import { Occupations } from "@app/data";
 

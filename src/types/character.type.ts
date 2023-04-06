@@ -1,4 +1,4 @@
-import { Occupation } from "@appTypes/occupation.type";
+import { Occupation } from "@app/types/occupation.type";
 
 export interface Character {
   /**

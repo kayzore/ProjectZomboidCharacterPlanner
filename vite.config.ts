@@ -12,11 +12,10 @@ export default defineConfig({
 			'@shared': path.resolve(__dirname, 'src/shared'),
 			'@pages': path.resolve(__dirname, 'src/pages'),
       '@layout': path.resolve(__dirname, 'src/layout'),
-      '@appTypes': path.resolve(__dirname, 'src/types'),
-      '@assets': path.resolve(__dirname, 'src/assets')
-		}
+      '@assets': path.resolve(__dirname, 'src/assets'),
+		},
   },
   test: {
     environment: 'jsdom',
-  }
+  },
 });

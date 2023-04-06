@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
 
-import { Occupation } from "@appTypes/occupation.type";
-import { Character } from "@appTypes/character.type";
+import { Occupation } from "@app/types/occupation.type";
+import { Character } from "@app/types/character.type";
 import { Func } from "@shared/types";
 
 type UseCharacterService = {
