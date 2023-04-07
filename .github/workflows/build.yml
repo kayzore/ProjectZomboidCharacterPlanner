@@ -44,8 +44,7 @@ jobs:
 
     - name: Install Dependencies
       if: steps.cache-nodemodules.outputs.cache-hit != 'true'
-      run: |
-        npm ci
+      run: npm ci
 
     - name: Run ts check
       run: tsc --project tsconfig.json
@@ -55,3 +54,14 @@ jobs:
 
     - name: Run tests
       run: npm run test
+
+    - name: Run coverage
+      run: npm run test:coverage
+
+    - name: Run codacy-coverage-reporter
+      uses: codacy/codacy-coverage-reporter-action@v1
+      with:
+        project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+        # or
+        # api-token: ${{ secrets.CODACY_API_TOKEN }}
+        coverage-reports: coverage/coverage-summary.json
