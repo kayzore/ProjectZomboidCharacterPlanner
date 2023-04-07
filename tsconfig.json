@@ -21,7 +21,6 @@
 			"@shared/*": ["./src/shared/*"],
       "@pages/*": ["./src/pages/*"],
       "@layout/*": ["./src/layout/*"],
-      "@types/*": ["./src/types/*"],
       "@assets/*": ["./src/assets/*"]
 		}
   },
