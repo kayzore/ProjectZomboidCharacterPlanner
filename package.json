@@ -8,7 +8,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test": "vitest",
-    "test:coverage": "vitest run --coverage.enabled --coverage.provider=istanbul --coverage.reporter=json-summary"
+    "test:coverage": "vitest run --coverage.enabled --coverage.provider=istanbul --coverage.reporter=lcov"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.13",
