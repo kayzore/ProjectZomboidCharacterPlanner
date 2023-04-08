@@ -31,8 +31,7 @@ const HomePage: FunctionComponent = () => {
 
   return (
     <MainLayout>
-      <div className="flex gap-12 w-full h-full text-black dark:text-white">
-
+      <div className="flex gap-12 w-full h-full text-black dark:text-white" data-testid="home-page-content">
         <Column className="bg-white shadow-md border dark:border-none dark:bg-slate-800 rounded-lg">
           <h2 className="text-xl font-medium">{translate("occupation")}</h2>
           <OccupationContainer onOccupationClick={setOccupation} />

@@ -1,6 +1,6 @@
 import { createContext, FunctionComponent, ReactElement, useEffect, useState } from "react";
 
-import { flattenObject } from '@app/helpers';
+import { flattenObject } from '@shared/helpers';
 import { Locale } from "@app/types";
 import { Dictionary } from "@app/shared/types";
 
@@ -69,7 +69,7 @@ const TranslationContext = createContext({
 } as Context);
 
 const TranslationProvider: FunctionComponent<Props> = (props: Props) => {
-  const [locale, setLocale] = useLocalStorage<Locale>("locale", DefaultLocale);
+  const [locale , setLocale] = useLocalStorage<Locale>("locale", DefaultLocale);
   const [translations, setTranslations] = useState(getTranslationDictionary(DefaultLocale));
 
   const loadTranslations = (locale: string): void => {
@@ -83,7 +83,11 @@ const TranslationProvider: FunctionComponent<Props> = (props: Props) => {
   };
 
   useEffect(() => {
-    loadTranslations(locale);
+    if (locale) {
+      loadTranslations(locale);
+    } else {
+      throw new Error(`Can't load translation for locale '${locale}'.`);
+    }
   }, [locale]);
 
   return (

@@ -4,11 +4,13 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "check": "tsc",
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "test": "vitest",
-    "test:coverage": "vitest run --coverage.enabled --coverage.provider=istanbul --coverage.reporter=lcov"
+    "test:coverage": "vitest run --coverage.enabled",
+    "test:coverage:ci": "vitest run --coverage.enabled --coverage.reporter=lcov"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.13",

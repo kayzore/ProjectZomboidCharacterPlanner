@@ -4,13 +4,13 @@
  * @param keys Object keys.
  * @returns A flatten version of the current object.
  */
-export const flattenObject = (obj: object, keys = []): object => {
-  return Object.keys(obj).reduce((acc, currentKey) => {
+export const flattenObject = (obj: object, keys = []): object => (
+  Object.keys(obj).reduce((acc, currentKey) => {
     const key: never = currentKey as keyof typeof obj;
-    const o = typeof obj[key] === 'object' ?
-      flattenObject(obj[key], keys.concat(key)) :
-      { [keys.concat(key).join(".")]: obj[key] };
+    const o = typeof obj[key] === 'object'
+      ? flattenObject(obj[key], keys.concat(key))
+      : { [keys.concat(key).join(".")]: obj[key] };
 
     return Object.assign(acc, o);
-  }, {});
-};
+  }, {})
+);
