@@ -10,10 +10,10 @@ import {Trait} from "@app/types";
 
 type UseCharacterService = {
   character: Character,
+  characterFullSkills: Skill[],
   characterRemainingPoints: number,
   setOccupation: Func<[Occupation], void>,
-  getTotalSkills: Func<[], Skill[]>,
-  setTrait: Func<[Trait], void>,
+  toggleTrait: Func<[Trait], void>,
 };
 
 export const getDefaultCharacter: Func<[], Character> = (): Character => ({
@@ -26,13 +26,16 @@ export const getDefaultCharacter: Func<[], Character> = (): Character => ({
 export const getCharacterTotalSkills = (character: Character): Skill[] => {
   const skills = [] as Skill[];
 
-  // Add occupations skills multiplier to character skills multiplier
   Skills.forEach((skill: Skill) => {
+    // Update skill multiplier
     const occupationSkill = character.occupation?.skills
       .filter((occupationSkill: Skill) => occupationSkill.name === skill.name)[0]
       || { ...skill, multiplier: 0 };
+    const multiplier = skill.multiplier + occupationSkill.multiplier;
 
-    skills.push({ ...skill, multiplier: skill.multiplier + occupationSkill.multiplier });
+    // TODO: Update skill starting level
+
+    skills.push({ ...skill, multiplier });
   });
 
   return skills;
@@ -56,28 +59,23 @@ export const useCharacterService = (initialCharacter: Character = {...getDefault
   const [character, setCharacter] = useState<Character>(initialCharacter);
 
   const setOccupation = (occupation: Occupation): void => {
-    setCharacter((prevCharacter) => ({ ...prevCharacter, occupation, skills: [...Skills], traits: [] }));
+    setCharacter({ ...getDefaultCharacter(), occupation });
   };
 
-  const setTrait = (trait: Trait): void => {
-    setCharacter((prevCharacter) => {
-      let traits;
-
-      if (prevCharacter.traits.includes(trait)) {
-        traits = prevCharacter.traits.filter((t: Trait) => t.name !== trait.name);
-      } else {
-        traits = [...prevCharacter.traits, trait];
-      }
-
-      return { ...prevCharacter, traits, skills: [...Skills] };
-    });
+  const toggleTrait = (trait: Trait): void => {
+    if (character.occupation) {
+      setCharacter((prevCharacter) => ({
+        ...prevCharacter,
+        traits: prevCharacter.traits.includes(trait)
+          ? prevCharacter.traits.filter((t: Trait) => t.name !== trait.name)
+          : [...prevCharacter.traits, trait],
+      }));
+    }
   };
 
   const characterRemainingPoints = useMemo(() => getCharacterRemainingPoints(character), [character]);
 
-  const getTotalSkills = (): Skill[] => {
-    return getCharacterTotalSkills(character);
-  };
+  const characterFullSkills = useMemo(() => getCharacterTotalSkills(character), [character]);
 
-  return { character, characterRemainingPoints, getTotalSkills, setOccupation, setTrait };
+  return { character, characterFullSkills, characterRemainingPoints, setOccupation, toggleTrait };
 };

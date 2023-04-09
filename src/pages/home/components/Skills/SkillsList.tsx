@@ -1,6 +1,5 @@
 import { Skill } from "@app/types/skill.type";
-import { SkillItem } from "@pages/home/components";
-import { useLocale } from "@app/hooks";
+import { SkillCategoryItem } from "@pages/home/components";
 
 type Props = {
   skills: Skill[],
@@ -8,81 +7,20 @@ type Props = {
 
 const SkillsList: React.FunctionComponent<Props> = (props: Props) => {
   const { skills } = props;
-  const { translate } = useLocale();
 
   return (
     <ul className="mt-6 pr-2 overflow-y-auto">
-      <li className="mb-4">
-        <div>{translate("skills.category.passive")}</div>
-        <ul className="m-2">
-          {skills
-            .filter((skill: Skill) => skill.category === "Passive")
-            .map((skill: Skill) => (
-              <SkillItem key={skill.name} skill={skill} />
-            ))
-          }
-        </ul>
-      </li>
+      <SkillCategoryItem category="Passive" skills={skills} />
 
-      <li className="mb-4">
-        <div>{translate("skills.category.agility")}</div>
-        <ul className="m-2">
-          {skills
-            .filter((skill: Skill) => skill.category === "Agility")
-            .map((skill: Skill) => (
-              <SkillItem key={skill.name} skill={skill} />
-            ))
-          }
-        </ul>
-      </li>
+      <SkillCategoryItem category="Agility" skills={skills} />
 
-      <li className="mb-4">
-        <div>{translate("skills.category.combat")}</div>
-        <ul className="m-2">
-          {skills
-            .filter((skill: Skill) => skill.category === "Combat")
-            .map((skill: Skill) => (
-              <SkillItem key={skill.name} skill={skill} />
-            ))
-          }
-        </ul>
-      </li>
+      <SkillCategoryItem category="Combat" skills={skills} />
 
-      <li className="mb-4">
-        <div>{translate("skills.category.crafting")}</div>
-        <ul className="m-2">
-          {skills
-            .filter((skill: Skill) => skill.category === "Crafting")
-            .map((skill: Skill) => (
-              <SkillItem key={skill.name} skill={skill} />
-            ))
-          }
-        </ul>
-      </li>
+      <SkillCategoryItem category="Crafting" skills={skills} />
 
-      <li className="mb-4">
-        <div>{translate("skills.category.firearm")}</div>
-        <ul className="m-2">
-          {skills
-            .filter((skill: Skill) => skill.category === "Firearm")
-            .map((skill: Skill) => (
-              <SkillItem key={skill.name} skill={skill} />
-            ))
-          }
-        </ul>
-      </li>
+      <SkillCategoryItem category="Firearm" skills={skills} />
 
-      <li className="mb-4">
-        <div>{translate("skills.category.survivalist")}</div>
-        <ul className="m-2">
-          {skills
-            .filter((skill: Skill) => skill.category === "Survivalist")
-            .map((skill: Skill) => (
-              <SkillItem key={skill.name} skill={skill} />
-            ))
-          }
-        </ul>
-      </li>
+      <SkillCategoryItem category="Survivalist" skills={skills} />
     </ul>
   );
 };
