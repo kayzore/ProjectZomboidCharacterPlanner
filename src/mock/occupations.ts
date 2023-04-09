@@ -1,4 +1,37 @@
 import { Occupation } from "@app/types";
+import {
+  AimingSkill,
+  AxeSkill,
+  CarpentrySkill,
+  CookingSkill,
+  ElectricalSkill,
+  FarmingSkill,
+  FirstAidSkill,
+  FishingSkill,
+  FitnessSkill,
+  ForagingSkill,
+  LightFootedSkill,
+  MaintenanceSkill,
+  MechanicsSkill,
+  MetalWorkingSkill,
+  NimbleSkill,
+  ReloadingSkill,
+  ShortBladeSkill,
+  ShortBluntSkill,
+  SneakingSkill,
+  SprintingSkill,
+  StrengthSkill,
+  TrappingSkill
+} from "@mock/skills";
+import {
+  AmateurMechanicTrait,
+  AxeManTrait,
+  BurglarTrait,
+  CookTrait,
+  DesensitizedTrait,
+  NightOwlTrait,
+  NutritionistTrait
+} from "@mock/occupation-traits";
 
 export const Occupations: Occupation[] = [
   {
@@ -6,153 +39,266 @@ export const Occupations: Occupation[] = [
     name: 'occupations.uneployed.title',
     description: 'occupations.unemployed.description',
     icon: '',
-    startingPoints: 8
+    startingPoints: 8,
+    skills: [],
+    traits: [],
   },
   {
     id: 'FIRE_OFFICER',
     name: 'occupations.fireOfficer.title',
     description: 'occupations.fireOfficer.description',
     icon: 'Fire_Officer.png',
-    startingPoints: 0
+    startingPoints: 0,
+    skills: [
+      { ...AxeSkill, multiplier: 1 },
+      { ...FitnessSkill, multiplier: 1 },
+      { ...SprintingSkill, multiplier: 1 },
+      { ...StrengthSkill, multiplier: 1 },
+    ],
+    traits: [],
   },
   {
     id: 'POLICE_OFFICER',
     name: 'occupations.policeOfficer.title',
     description: 'occupations.policeOfficer.description',
     icon: 'Police_Officer.png',
-    startingPoints: -4
+    startingPoints: -4,
+    skills: [
+      { ...AimingSkill, multiplier: 3 },
+      { ...NimbleSkill, multiplier: 1 },
+      { ...ReloadingSkill, multiplier: 2 },
+    ],
+    traits: [],
   },
   {
     id: 'PARK_RANGER',
     name: 'occupations.parkRanger.title',
     description: 'occupations.parkRanger.description',
     icon: 'Park_Ranger.png',
-    startingPoints: -4
+    startingPoints: -4,
+    skills: [
+      { ...AxeSkill, multiplier: 1 },
+      { ...CarpentrySkill, multiplier: 1 },
+      { ...ForagingSkill, multiplier: 2 },
+      { ...TrappingSkill, multiplier: 2 },
+    ],
+    traits: [],
   },
   {
     id: 'CONSTRUCTION_WORKER',
     name: 'occupations.constructionWorker.title',
     description: 'occupations.constructionWorker.description',
     icon: 'Construction_Worker.png',
-    startingPoints: -2
+    startingPoints: -2,
+    skills: [
+      { ...CarpentrySkill, multiplier: 1 },
+      { ...ShortBluntSkill, multiplier: 3 },
+    ],
+    traits: [],
   },
   {
     id: 'SECURITY_GUARD',
     name: 'occupations.securityGuard.title',
     description: 'occupations.securityGuard.description',
     icon: 'Security_Guard.png',
-    startingPoints: -2
+    startingPoints: -2,
+    skills: [
+      { ...LightFootedSkill, multiplier: 1 },
+      { ...SprintingSkill, multiplier: 2 },
+    ],
+    traits: [NightOwlTrait],
   },
   {
     id: 'CARPENTER',
     name: 'occupations.carpenter.title',
     description: 'occupations.carpenter.description',
     icon: 'Carpenter.png',
-    startingPoints: 2
+    startingPoints: 2,
+    skills: [
+      { ...CarpentrySkill, multiplier: 3 },
+      { ...ShortBluntSkill, multiplier: 1 },
+    ],
+    traits: [],
   },
   {
     id: 'BURGLAR',
     name: 'occupations.burglar.title',
     description: 'occupations.burglar.description',
     icon: 'Burglar.png',
-    startingPoints: -6
+    startingPoints: -6,
+    skills: [
+      { ...LightFootedSkill, multiplier: 2 },
+      { ...NimbleSkill, multiplier: 2 },
+      { ...SneakingSkill, multiplier: 2 },
+    ],
+    traits: [BurglarTrait],
   },
   {
     id: 'CHEF',
     name: 'occupations.chef.title',
     description: 'occupations.chef.description',
     icon: 'Chef.png',
-    startingPoints: -4
+    startingPoints: -4,
+    skills: [
+      { ...CookingSkill, multiplier: 3 },
+      { ...MaintenanceSkill, multiplier: 1 },
+      { ...ShortBladeSkill, multiplier: 1 },
+    ],
+    traits: [CookTrait],
   },
   {
     id: 'REPAIRMAN',
     name: 'occupations.repairman.title',
     description: 'occupations.repairman.description',
     icon: 'Repairman.png',
-    startingPoints: -4
+    startingPoints: -4,
+    skills: [
+      { ...CarpentrySkill, multiplier: 1 },
+      { ...MaintenanceSkill, multiplier: 2 },
+      { ...ShortBluntSkill, multiplier: 1 },
+    ],
+    traits: [],
   },
   {
     id: 'FARMER',
     name: 'occupations.farmer.title',
     description: 'occupations.farmer.description',
     icon: 'Farmer.png',
-    startingPoints: 2
+    startingPoints: 2,
+    skills: [
+      { ...FarmingSkill, multiplier: 3 },
+    ],
+    traits: [],
   },
   {
     id: 'FISHERMAN',
     name: 'occupations.fisherman.title',
     description: 'occupations.fisherman.description',
     icon: 'Fisherman.png',
-    startingPoints: -2
+    startingPoints: -2,
+    skills: [
+      { ...FishingSkill, multiplier: 3 },
+      { ...ForagingSkill, multiplier: 1 },
+    ],
+    traits: [],
   },
   {
     id: 'DOCTOR',
     name: 'occupations.doctor.title',
     description: 'occupations.doctor.description',
     icon: 'Doctor.png',
-    startingPoints: 2
+    startingPoints: 2,
+    skills: [
+      { ...FirstAidSkill, multiplier: 3 },
+      { ...ShortBladeSkill, multiplier: 1 },
+    ],
+    traits: [],
   },
   {
     id: 'VETERAN',
     name: 'occupations.veteran.title',
     description: 'occupations.veteran.description',
     icon: 'Veteran.png',
-    startingPoints: -8
+    startingPoints: -8,
+    skills: [
+      { ...AimingSkill, multiplier: 2 },
+      { ...ReloadingSkill, multiplier: 2 },
+    ],
+    traits: [DesensitizedTrait],
   },
   {
     id: 'NURSE',
     name: 'occupations.nurse.title',
     description: 'occupations.nurse.description',
     icon: 'Nurse.png',
-    startingPoints: 2
+    startingPoints: 2,
+    skills: [
+      { ...FirstAidSkill, multiplier: 2 },
+      { ...LightFootedSkill, multiplier: 1 },
+    ],
+    traits: [],
   },
   {
     id: 'LUMBERJACK',
     name: 'occupations.lumberjack.title',
     description: 'occupations.lumberjack.description',
     icon: 'Lumberjack.png',
-    startingPoints: 0
+    startingPoints: 0,
+    skills: [
+      { ...AxeSkill, multiplier: 2 },
+      { ...StrengthSkill, multiplier: 1 },
+    ],
+    traits: [AxeManTrait],
   },
   {
     id: 'FITNESS_INSTRUCTOR',
     name: 'occupations.fitnessInstructor.title',
     description: 'occupations.fitnessInstructor.description',
     icon: 'FitnessInstructor.png',
-    startingPoints: -6
+    startingPoints: -6,
+    skills: [
+      { ...FitnessSkill, multiplier: 3 },
+      { ...SprintingSkill, multiplier: 2 },
+    ],
+    traits: [NutritionistTrait],
   },
   {
     id: 'BURGER_FLIPPER',
     name: 'occupations.burgerFlipper.title',
     description: 'occupations.burgerFlipper.description',
     icon: 'BurgerFlipper.png',
-    startingPoints: 2
+    startingPoints: 2,
+    skills: [
+      { ...CookingSkill, multiplier: 2 },
+      { ...MaintenanceSkill, multiplier: 1 },
+      { ...ShortBladeSkill, multiplier: 1 },
+    ],
+    traits: [CookTrait],
   },
   {
     id: 'ELECTRICIAN',
     name: 'occupations.electrician.title',
     description: 'occupations.electrician.description',
     icon: 'Electrician.png',
-    startingPoints: -4
+    startingPoints: -4,
+    skills: [
+      { ...ElectricalSkill, multiplier: 3 },
+    ],
+    traits: [],
   },
   {
     id: 'ENGINEER',
     name: 'occupations.engineer.title',
     description: 'occupations.engineer.description',
     icon: 'Engineer.png',
-    startingPoints: -4
+    startingPoints: -4,
+    skills: [
+      { ...CarpentrySkill, multiplier: 1 },
+      { ...ElectricalSkill, multiplier: 1 },
+    ],
+    traits: [],
   },
   {
     id: 'METALWORKER',
     name: 'occupations.metalworker.title',
     description: 'occupations.metalworker.description',
     icon: 'Metalworker.png',
-    startingPoints: -6
+    startingPoints: -6,
+    skills: [
+      { ...MetalWorkingSkill, multiplier: 3 },
+    ],
+    traits: [],
   },
   {
     id: 'MECHANIC',
     name: 'occupations.mechanic.title',
     description: 'occupations.mechanic.description',
     icon: 'Mechanic.png',
-    startingPoints: -4
+    startingPoints: -4,
+    skills: [
+      { ...MechanicsSkill, multiplier: 3 },
+      { ...ShortBluntSkill, multiplier: 1 },
+    ],
+    traits: [AmateurMechanicTrait],
   },
 ];

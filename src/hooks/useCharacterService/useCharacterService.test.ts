@@ -9,7 +9,7 @@ import { Occupations } from "@mock/occupations";
 describe("hooks -> useCharacterService", () => {
   it("Should create an empty character if no character is provided", () => {
     vi.mock('uuid', () => ({ v4: (): string => "11bf5b37-e0b8-42e0-8dcf-dc8c4aefc000" }));
-    const expectedCharacter: Character = { id: uuid(), occupation: null };
+    const expectedCharacter: Character = { id: uuid(), occupation: null, skills: [] };
 
     const { result } = renderHook(useCharacterService);
 

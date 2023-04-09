@@ -1,3 +1,6 @@
+import { Skill } from "@app/types/skill.type";
+import { Trait } from "@app/types/trait.type";
+
 export interface Occupation {
   /**
    * Gets the occupation id.
@@ -27,10 +30,10 @@ export interface Occupation {
   /**
    * Gets the occupation skills.
    */
-  skills?: [],
+  skills: Skill[],
 
   /**
    * Gets the occupation traits.
    */
-  traits?: [],
+  traits: Trait[],
 }

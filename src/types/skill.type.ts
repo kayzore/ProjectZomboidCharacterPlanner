@@ -3,5 +3,6 @@ export type SkillCategory = "Passive" | "Agility" | "Combat" | "Crafting" | "Fir
 export interface Skill {
   name: string;
   category: SkillCategory;
+  startingLevel: number;
   multiplier: number;
 }
