@@ -4,29 +4,12 @@ import { useLocale } from "@app/hooks";
 import { PositiveTraits, NegativeTraits } from "@mock/index";
 import MainLayout from "@layout/MainLayout";
 import { Column, Separator, Title } from "@app/layout/components";
-import { OccupationContainer, RemainingPoints, TraitsList } from "@pages/home/components";
+import { OccupationContainer, RemainingPoints, SkillsList, TraitsList } from "@pages/home/components";
 import { useCharacterService } from "@app/hooks";
 
 const HomePage: FunctionComponent = () => {
   const { translate } = useLocale();
-  const { getRemainingPoints, setOccupation } = useCharacterService();
-
-  // const onTraitClick = useCallback((column: TraitType, trait: Trait): void => {
-  //   if (column === "Occupation") {
-  //     const updatedCharacter = {
-  //       ...character,
-  //       traits: character.traits.filter((t: Trait) => !t.type.includes("Occupation"))
-  //     } as Character;
-
-  //     if (character.traits.includes(trait)) {
-  //       updatedCharacter.traits.filter((t) => t.name === trait.name);
-  //     } else {
-  //       updatedCharacter.traits.push(trait);
-  //     }
-
-  //     setCharacter(updatedCharacter);
-  //   }
-  // }, [character]);
+  const { getRemainingPoints, getTotalSkills, setOccupation } = useCharacterService();
 
   return (
     <MainLayout>
@@ -54,7 +37,7 @@ const HomePage: FunctionComponent = () => {
           <Title ReactElement={<h2 />} title={translate("skills.title")}>
             <RemainingPoints points={getRemainingPoints()} />
           </Title>
-          {/* <SkillsContainer character={character} /> */}
+          <SkillsList skills={getTotalSkills()} />
         </Column>
       </div>
     </MainLayout>

@@ -12,11 +12,13 @@ const TraitsList: React.FunctionComponent<Props> = (props: Props) => {
 
   return (
     <ul className="mt-6 pr-2 overflow-y-auto">
-      {
-        traits.map((trait: Trait) => (
-          <TraitItem key={trait.name} trait={trait} onTraitClick={(trait: Trait): void => onTraitClick(trait)} />
-        ))
-      }
+      {traits.map((trait: Trait) => (
+        <TraitItem
+          key={trait.name}
+          trait={trait}
+          onTraitClick={(trait: Trait): void => onTraitClick(trait)}
+        />
+      ))}
     </ul>
   );
 };

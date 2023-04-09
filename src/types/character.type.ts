@@ -11,7 +11,7 @@ export interface Character {
    */
   occupation: Occupation | null,
   /**
-   * Gets the character occupation.
+   * Gets the character skills.
    */
   skills: Skill[],
 }

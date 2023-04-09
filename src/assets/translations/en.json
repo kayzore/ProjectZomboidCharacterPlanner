@@ -374,6 +374,8 @@
   },
   "skills": {
     "title": "Skills",
+    "startingLevel": "StartingLevel",
+    "multiplier": "Multiplier",
     "category": {
       "passive": "Passive",
       "agility": "Agility",
