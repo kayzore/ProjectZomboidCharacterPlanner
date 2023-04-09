@@ -18,11 +18,12 @@
     "types": ["node"],
     "paths": {
       "@app/*": ["./src/*"],
-			"@shared/*": ["./src/shared/*"],
-      "@pages/*": ["./src/pages/*"],
+      "@assets/*": ["./src/assets/*"],
       "@layout/*": ["./src/layout/*"],
-      "@assets/*": ["./src/assets/*"]
-		}
+      "@mock/*": ["./src/mock/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@shared/*": ["./src/shared/*"]
+    }
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

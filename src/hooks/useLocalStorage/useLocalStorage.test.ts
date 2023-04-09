@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { renderHook } from '@testing-library/react';
+import { act, renderHook } from '@testing-library/react';
 
 import { useLocalStorage } from "@app/hooks";
 
@@ -30,5 +30,32 @@ describe("hooks -> useLocalStorage", () => {
 
     // THEN
     expect(value).toBe(expectedValue);
+  });
+
+  it("Should return the new value when setValue function is called", () => {
+    // GIVEN
+    const expectedInitialValue = "initial-value";
+    const expectedUpdatedValue = "updated-value";
+
+    // WHEN
+    const { result } = renderHook(() => useLocalStorage("test", expectedInitialValue));
+    act(() => result.current[1](expectedUpdatedValue));
+    const [value] = result.current;
+
+    // THEN
+    expect(value).toBe(expectedUpdatedValue);
+  });
+
+  it("Should update the locale storage when setValue function is called", () => {
+    // GIVEN
+    const expectedInitialValue = "initial-value";
+    const expectedUpdatedValue = "updated-value";
+
+    // WHEN
+    const { result } = renderHook(() => useLocalStorage("test", expectedInitialValue));
+    act(() => result.current[1](expectedUpdatedValue));
+
+    // THEN
+    expect(JSON.parse(window.localStorage.getItem("test") || "")).toBe(expectedUpdatedValue);
   });
 });

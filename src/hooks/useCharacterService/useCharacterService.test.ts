@@ -4,7 +4,7 @@ import { v4 as uuid } from "uuid";
 
 import { Character } from "@app/types/character.type";
 import { useCharacterService } from "@app/hooks";
-import { Occupations } from "@app/data";
+import { Occupations } from "@mock/occupations";
 
 describe("hooks -> useCharacterService", () => {
   it("Should create an empty character if no character is provided", () => {

@@ -1,11 +1,10 @@
 import { FunctionComponent } from "react";
 
 import { useLocale } from "@app/hooks";
-import { PositiveTraits, NegativeTraits } from "@app/data";
+import { PositiveTraits, NegativeTraits } from "@mock/index";
 import MainLayout from "@layout/MainLayout";
 import { Column, Separator } from "@app/layout/components";
-import OccupationContainer from "./components/OccupationContainer";
-import TraitsList from "./components/TraitsList";
+import { OccupationContainer, TraitsList } from "@pages/home/components";
 import { useCharacterService } from "@app/hooks";
 
 const HomePage: FunctionComponent = () => {

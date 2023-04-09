@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 import OccupationItem from "./OccupationItem";
 import { Occupation } from "@app/types";
-import { Occupations } from "@app/data";
+import { Occupations } from "@mock/occupations";
 
 type Props = {
   onOccupationClick: (occupation: Occupation) => void;
