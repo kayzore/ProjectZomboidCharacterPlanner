@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import clsx from "clsx";
 
-import OccupationItem from "./OccupationItem";
+import { OccupationItem } from "@pages/home/components";
 import { Occupation } from "@app/types";
 import { Occupations } from "@mock/occupations";
 

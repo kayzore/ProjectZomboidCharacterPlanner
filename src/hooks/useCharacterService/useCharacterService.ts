@@ -8,6 +8,7 @@ import { Func } from "@shared/types";
 type UseCharacterService = {
   character: Character,
   setOccupation: Func<[Occupation], void>,
+  getRemainingPoints: Func<[], number>,
 };
 
 export const useCharacterService = (
@@ -19,5 +20,16 @@ export const useCharacterService = (
     setCharacter((prevCharacter) => ({ ...prevCharacter, occupation }));
   };
 
-  return { character, setOccupation };
+  const getRemainingPoints = (): number => {
+    let points = 0;
+
+    if (character?.occupation) {
+      const { startingPoints } = character.occupation;
+      points += startingPoints;
+    }
+
+    return points;
+  };
+
+  return { character, getRemainingPoints, setOccupation };
 };

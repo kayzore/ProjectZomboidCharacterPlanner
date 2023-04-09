@@ -29,4 +29,17 @@ describe("hooks -> useCharacterService", () => {
     expect(character).not.toBe(null);
     expect(character.occupation).toMatchObject(expectedOccupation);
   });
+
+  it("Should return the remaining points to use when getRemainingPoints is called", () => {
+    const expectedOccupation = Occupations[0];
+    const expectedRemainingPoints = expectedOccupation.startingPoints;
+    const { result } = renderHook(useCharacterService);
+
+    act(() => result.current.setOccupation(expectedOccupation));
+
+    const { character } = result.current;
+
+    expect(character).not.toBe(null);
+    expect(result.current.getRemainingPoints()).toBe(expectedRemainingPoints);
+  });
 });

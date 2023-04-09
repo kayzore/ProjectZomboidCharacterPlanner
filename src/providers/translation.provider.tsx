@@ -79,6 +79,8 @@ const TranslationProvider: FunctionComponent<Props> = (props: Props) => {
   const handleSetLocale = (newLocale: Locale): void => {
     if (hasLocale(newLocale)) {
       setLocale(newLocale);
+    } else {
+      throw new Error(`Can't set locale for locale '${locale}'.`);
     }
   };
 

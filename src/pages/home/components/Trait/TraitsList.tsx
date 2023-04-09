@@ -1,6 +1,6 @@
 import { Trait } from "@app/types";
 
-import TraitItem from "./TraitItem";
+import { TraitItem } from "@pages/home/components";
 
 type Props = {
   traits: Trait[],

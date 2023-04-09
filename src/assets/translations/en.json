@@ -343,6 +343,7 @@
     }
   },
   "skills": {
+    "title": "Skills",
     "fitness": "Fitness",
     "strength": "Strength",
     "sprinting": "Sprinting"

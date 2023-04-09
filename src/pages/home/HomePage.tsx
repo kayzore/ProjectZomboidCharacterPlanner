@@ -4,12 +4,12 @@ import { useLocale } from "@app/hooks";
 import { PositiveTraits, NegativeTraits } from "@mock/index";
 import MainLayout from "@layout/MainLayout";
 import { Column, Separator } from "@app/layout/components";
-import { OccupationContainer, TraitsList } from "@pages/home/components";
+import { OccupationContainer, RemainingPoints, TraitsList } from "@pages/home/components";
 import { useCharacterService } from "@app/hooks";
 
 const HomePage: FunctionComponent = () => {
   const { translate } = useLocale();
-  const { setOccupation } = useCharacterService();
+  const { getRemainingPoints, setOccupation } = useCharacterService();
 
   // const onTraitClick = useCallback((column: TraitType, trait: Trait): void => {
   //   if (column === "Occupation") {
@@ -51,9 +51,10 @@ const HomePage: FunctionComponent = () => {
         </Column>
 
         <Column className="bg-white shadow-md border dark:border-none dark:bg-slate-800 rounded-lg">
-          <h2 className="text-xl font-medium">
-            Skills
-          </h2>
+          <div className="flex items-center justify-between">
+            <h2 className="text-xl font-medium">{translate("skills.title")}</h2>
+            <RemainingPoints points={getRemainingPoints()} />
+          </div>
           {/* <SkillsContainer character={character} /> */}
         </Column>
       </div>
