@@ -1,15 +1,17 @@
 import clsx from "clsx";
 
-import { useLocale } from "@app/hooks";
 import { Trait } from "@app/types";
+import { useLocale } from "@app/hooks";
+import { pointsStyle } from "@shared/styles/points.style";
 
 type Props = {
   trait: Trait,
   onTraitClick: (trait: Trait) => void,
+  className?: string | object,
 } & React.HtmlHTMLAttributes<HTMLLIElement>;
 
 const TraitItem: React.FunctionComponent<Props> = (props: Props) => {
-  const { onTraitClick, trait, className, ...rest } = props;
+  const { onTraitClick, trait, className = null, ...rest } = props;
   const { translate } = useLocale();
 
   return (
@@ -19,11 +21,7 @@ const TraitItem: React.FunctionComponent<Props> = (props: Props) => {
 
       <div className="flex justify-between w-full ml-3">
         <div>{translate(trait.name)}</div>
-        <div className={clsx({
-          'text-red-500': trait.points > 0,
-          'text-green-500': trait.points < 0,
-          'font-bold': true
-        })}>
+        <div className={pointsStyle(trait.points)}>
           { trait.points > 0 ? `+${trait.points}` : trait.points}
         </div>
       </div>

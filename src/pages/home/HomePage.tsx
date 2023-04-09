@@ -3,7 +3,7 @@ import { FunctionComponent } from "react";
 import { useLocale } from "@app/hooks";
 import { PositiveTraits, NegativeTraits } from "@mock/index";
 import MainLayout from "@layout/MainLayout";
-import { Column, Separator } from "@app/layout/components";
+import { Column, Separator, Title } from "@app/layout/components";
 import { OccupationContainer, RemainingPoints, TraitsList } from "@pages/home/components";
 import { useCharacterService } from "@app/hooks";
 
@@ -32,29 +32,28 @@ const HomePage: FunctionComponent = () => {
     <MainLayout>
       <div className="flex gap-12 w-full h-full text-black dark:text-white" data-testid="home-page-content">
         <Column className="bg-white shadow-md border dark:border-none dark:bg-slate-800 rounded-lg">
-          <h2 className="text-xl font-medium">{translate("occupation")}</h2>
+          <Title ReactElement={<h2 />} title={translate("occupation")} />
           <OccupationContainer onOccupationClick={setOccupation} />
         </Column>
 
         <Column className="bg-white shadow-md border dark:border-none dark:bg-slate-800 rounded-lg">
           <div className="h-1/2 flex flex-col">
-            <h2 className="text-xl font-medium">{translate("traits.positive.title")}</h2>
+            <Title ReactElement={<h2 />} title={translate("traits.positive.title")} />
             <TraitsList traits={PositiveTraits} onTraitClick={(): void => void 0} />
           </div>
 
           <Separator orientation="Horizontal" />
 
           <div className="h-1/2 flex flex-col pb-6">
-            <h2 className="text-xl font-medium">{translate("traits.negative.title")}</h2>
+            <Title ReactElement={<h2 />} title={translate("traits.negative.title")} />
             <TraitsList traits={NegativeTraits} onTraitClick={(): void => void 0} />
           </div>
         </Column>
 
         <Column className="bg-white shadow-md border dark:border-none dark:bg-slate-800 rounded-lg">
-          <div className="flex items-center justify-between">
-            <h2 className="text-xl font-medium">{translate("skills.title")}</h2>
+          <Title ReactElement={<h2 />} title={translate("skills.title")}>
             <RemainingPoints points={getRemainingPoints()} />
-          </div>
+          </Title>
           {/* <SkillsContainer character={character} /> */}
         </Column>
       </div>

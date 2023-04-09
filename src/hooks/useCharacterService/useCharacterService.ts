@@ -11,6 +11,15 @@ type UseCharacterService = {
   getRemainingPoints: Func<[], number>,
 };
 
+export const getCharacterRemainingPoints: Func<[Character], number> = (character: Character) => {
+  let points = 0;
+
+  // Add starting points
+  points += character?.occupation?.startingPoints || 0;
+
+  return points;
+};
+
 export const useCharacterService = (
   initialCharacter: Character = { id: uuid(), occupation: null }
 ): UseCharacterService => {
@@ -21,14 +30,7 @@ export const useCharacterService = (
   };
 
   const getRemainingPoints = (): number => {
-    let points = 0;
-
-    if (character?.occupation) {
-      const { startingPoints } = character.occupation;
-      points += startingPoints;
-    }
-
-    return points;
+    return getCharacterRemainingPoints(character);
   };
 
   return { character, getRemainingPoints, setOccupation };
