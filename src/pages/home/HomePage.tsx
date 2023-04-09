@@ -9,7 +9,7 @@ import { useCharacterService } from "@app/hooks";
 
 const HomePage: FunctionComponent = () => {
   const { translate } = useLocale();
-  const { getRemainingPoints, getTotalSkills, setOccupation } = useCharacterService();
+  const { character, characterRemainingPoints, getTotalSkills, setOccupation, setTrait } = useCharacterService();
 
   return (
     <MainLayout>
@@ -22,20 +22,20 @@ const HomePage: FunctionComponent = () => {
         <Column className="bg-white shadow-md border dark:border-none dark:bg-slate-800 rounded-lg">
           <div className="h-1/2 flex flex-col">
             <Title ReactElement={<h2 />} title={translate("traits.positive.title")} />
-            <TraitsList traits={PositiveTraits} onTraitClick={(): void => void 0} />
+            <TraitsList traits={PositiveTraits} onTraitClick={setTrait} activeTraits={character.traits} />
           </div>
 
           <Separator orientation="Horizontal" />
 
           <div className="h-1/2 flex flex-col pb-6">
             <Title ReactElement={<h2 />} title={translate("traits.negative.title")} />
-            <TraitsList traits={NegativeTraits} onTraitClick={(): void => void 0} />
+            <TraitsList traits={NegativeTraits} onTraitClick={setTrait} activeTraits={character.traits} />
           </div>
         </Column>
 
         <Column className="bg-white shadow-md border dark:border-none dark:bg-slate-800 rounded-lg">
           <Title ReactElement={<h2 />} title={translate("skills.title")}>
-            <RemainingPoints points={getRemainingPoints()} />
+            <RemainingPoints points={characterRemainingPoints} />
           </Title>
           <SkillsList skills={getTotalSkills()} />
         </Column>
