@@ -33,9 +33,7 @@ export const getCharacterTotalSkills = (character: Character): Skill[] => {
       || { ...skill, multiplier: 0 };
     const multiplier = skill.multiplier + occupationSkill.multiplier;
 
-    // TODO: Update skill starting level
-
-    skills.push({ ...skill, multiplier });
+    skills.push({ ...occupationSkill, multiplier });
   });
 
   return skills;

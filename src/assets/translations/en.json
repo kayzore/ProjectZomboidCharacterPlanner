@@ -1,7 +1,7 @@
 {
   "occupation": "Occupation",
   "occupations": {
-    "uneployed": {
+    "unemployed": {
       "title": "Unemployed",
       "description": "8 free trait points."
     },
