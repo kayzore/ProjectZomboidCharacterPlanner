@@ -1,9 +1,0 @@
-{
-	"recommendations": [
-		"wix.vscode-import-cost",
-		"steoates.autoimport",
-		"editorconfig.editorconfig",
-		"dbaeumer.vscode-eslint",
-		"bradlc.vscode-tailwindcss"
-	]
-}
