@@ -5,13 +5,15 @@
   "type": "module",
   "homepage": "https://eastrall.github.io/ProjectZomboidCharacterPlanner",
   "scripts": {
+    "check": "tsc",
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "package:predeploy" : "npm run build",
     "package:deploy" : "gh-pages -d dist",
     "preview": "vite preview",
     "test": "vitest",
-    "test:coverage": "vitest run --coverage.enabled --coverage.provider=istanbul --coverage.reporter=lcov"
+    "test:coverage": "vitest run --coverage.enabled",
+    "test:coverage:ci": "vitest run --coverage.enabled --coverage.reporter=lcov"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.13",
@@ -23,7 +25,9 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
+    "@testing-library/dom": "^9.2.0",
     "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
     "@types/node": "^18.15.3",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",

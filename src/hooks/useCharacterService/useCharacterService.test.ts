@@ -4,12 +4,12 @@ import { v4 as uuid } from "uuid";
 
 import { Character } from "@app/types/character.type";
 import { useCharacterService } from "@app/hooks";
-import { Occupations } from "@app/data";
+import { Occupations } from "@mock/occupations";
 
 describe("hooks -> useCharacterService", () => {
   it("Should create an empty character if no character is provided", () => {
     vi.mock('uuid', () => ({ v4: (): string => "11bf5b37-e0b8-42e0-8dcf-dc8c4aefc000" }));
-    const expectedCharacter: Character = { id: uuid(), occupation: null };
+    const expectedCharacter: Character = { id: uuid(), occupation: null, skills: [], traits: [] };
 
     const { result } = renderHook(useCharacterService);
 
@@ -28,5 +28,18 @@ describe("hooks -> useCharacterService", () => {
 
     expect(character).not.toBe(null);
     expect(character.occupation).toMatchObject(expectedOccupation);
+  });
+
+  it("Should return the remaining points to use when characterRemainingPoints is called", () => {
+    const expectedOccupation = Occupations[0];
+    const expectedRemainingPoints = expectedOccupation.startingPoints;
+    const { result } = renderHook(useCharacterService);
+
+    act(() => result.current.setOccupation(expectedOccupation));
+
+    const { character } = result.current;
+
+    expect(character).not.toBe(null);
+    expect(result.current.characterRemainingPoints).toBe(expectedRemainingPoints);
   });
 });

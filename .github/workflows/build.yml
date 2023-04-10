@@ -46,14 +46,14 @@ jobs:
       if: steps.cache-nodemodules.outputs.cache-hit != 'true'
       run: npm ci
 
-    - name: Run ts check
-      run: tsc --project tsconfig.json
+    - name: Check typescript
+      run: npm run check
 
     - name: Build web app
-      run: npm run build --if-present
+      run: npm run build
 
-    - name: Run coverage
-      run: npm run test:coverage
+    - name: Run tests coverage
+      run: npm run test:coverage:ci
 
     - name: Archive production artifacts
       uses: actions/upload-artifact@v3
@@ -72,6 +72,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
+    if: github.ref == 'refs/heads/main'
     steps:
       - name: Download a single artifact
         uses: actions/download-artifact@v3

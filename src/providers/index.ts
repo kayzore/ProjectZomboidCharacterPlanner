@@ -1,2 +1,2 @@
-export * from './theme.provider';
+export * from './ThemeProvider/theme.provider';
 export * from './translation.provider';

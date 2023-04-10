@@ -1,6 +1,6 @@
 import { createContext, FunctionComponent, ReactNode } from "react";
 
-import { Func } from "@app/shared/types";
+import { Func } from "@shared/types";
 import { useLocalStorage } from "@app/hooks";
 
 export const DefaultTheme: Theme = 'default';

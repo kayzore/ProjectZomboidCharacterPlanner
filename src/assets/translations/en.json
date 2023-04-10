@@ -1,7 +1,7 @@
 {
   "occupation": "Occupation",
   "occupations": {
-    "uneployed": {
+    "unemployed": {
       "title": "Unemployed",
       "description": "8 free trait points."
     },
@@ -340,12 +340,76 @@
         "title": "Weak Stomach",
         "description": "Higher chance to have food illness."
       }
+    },
+    "occupation": {
+      "amateurMechanic": {
+        "title": "Amateur Mechanic",
+        "description": "+3 Mechanics, can repair all vehicle types without having to read any recipe magazines."
+      },
+      "axeMan": {
+        "title": "Axe Man",
+        "description": "Swing axes 25% faster (combat and tree cutting)."
+      },
+      "burglar": {
+        "title": "Burglar",
+        "description": "Can hotwire vehicles and has less chance of breaking the lock of a window when forced open."
+      },
+      "cook": {
+        "title": "Cook",
+        "description": "Affects search mode and knows all the cooking recipes without having to read any recipe magazines."
+      },
+      "desensitized": {
+        "title": "Desensitized",
+        "description": "0% panic from all sources except night terrors."
+      },
+      "nightOwl": {
+        "title": "Night Owl",
+        "description": "Recovers from tiredness quicker while sleeping, but will remain asleep even when your character reaches 0 tiredness, which requires an alarm to take advantage of the trait."
+      },
+      "nutritionist": {
+        "title": "Nutritionist",
+        "description": "Allows the player to see the nutritional values of any food, even those that aren't packaged. Affects search mode."
+      }
     }
   },
   "skills": {
+    "title": "Skills",
+    "startingLevel": "StartingLevel",
+    "multiplier": "Multiplier",
+    "category": {
+      "passive": "Passive",
+      "agility": "Agility",
+      "combat": "Combat",
+      "crafting": "Crafting",
+      "firearm": "Firearm",
+      "survivalist": "Survivalist"
+    },
     "fitness": "Fitness",
     "strength": "Strength",
-    "sprinting": "Sprinting"
+    "sprinting": "Sprinting",
+    "light-footed": "Light Footed",
+    "nimble": "Nimble",
+    "sneaking": "Sneaking",
+    "axe": "Axe",
+    "long-blunt": "Long Blunt",
+    "short-blunt": "Short Blunt",
+    "long-blade": "Long Blade",
+    "short-blade": "Short Blade",
+    "spear": "Spear",
+    "maintenance": "Maintenance",
+    "carpentry": "Carpentry",
+    "cooking": "Cooking",
+    "farming": "Farming",
+    "first-aid": "First Aid",
+    "electrical": "Electrical",
+    "metal-working": "Metal Working",
+    "mechanics": "Mechanics",
+    "tailoring": "Tailoring",
+    "aiming": "Aiming",
+    "reloading": "Reloading",
+    "fishing": "Fishing",
+    "trapping": "Trapping",
+    "foraging": "Foraging"
   },
   "trait.name.positive.adrenaline-junkie": "Adrenaline Junkie",
   "trait.description.positive.adrenaline-junkie": "Moves faster when highly panicked.",

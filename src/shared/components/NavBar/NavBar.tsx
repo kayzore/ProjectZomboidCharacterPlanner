@@ -1,9 +1,10 @@
 type NavBarProps = {
-  children?: React.ReactNode
+  children?: React.ReactNode,
+  title: string,
 };
 
 const NavBar: React.FunctionComponent<NavBarProps> = (props: NavBarProps) => {
-  const { children } = props;
+  const { children, title } = props;
 
   return (
     <nav className="sticky top-0 bg-white dark:bg-slate-800 border-b shadow-sm border-slate-900/10 h-16 z-20">
@@ -11,7 +12,7 @@ const NavBar: React.FunctionComponent<NavBarProps> = (props: NavBarProps) => {
         <a href="/" className="flex items-center">
           <img alt="" src="/assets/images/spiffo.png" className="h-12 mr-3" />
           <span className="self-center text-xl font-semibold whitespace-nowrap text-black dark:text-white">
-            Project Zomboid - Character Planner
+            {title}
           </span>
         </a>
         <div id="navbar-right-container" className="flex items-center">
