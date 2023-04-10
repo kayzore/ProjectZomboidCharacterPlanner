@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://eastrall.github.io/ProjectZomboidCharacterPlanner/",
+  "homepage": "https://eastrall.github.io/ProjectZomboidCharacterPlanner",
   "scripts": {
     "check": "tsc",
     "dev": "vite",
