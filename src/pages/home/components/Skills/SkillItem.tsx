@@ -14,7 +14,7 @@ const SkillItem: React.FunctionComponent<Props> = (props: Props) => {
   const { translate } = useLocale();
 
   return (
-    <li className={clsx("flex justify-between w-full hover:bg-slate-200 dark:hover:bg-slate-600", className)}{...rest}>
+    <li className={clsx("flex justify-between w-full rounded-md px-1 hover:bg-slate-200 dark:hover:bg-slate-600", className)}{...rest}>
       <div>{translate(skill.name)}</div>
 
       <ul className="flex font-light italic">
