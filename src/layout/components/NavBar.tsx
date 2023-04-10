@@ -37,8 +37,8 @@ const NavBar: FunctionComponent = () => {
       </NavLink>
 
       <NavButton id="theme-switcher" onClick={toggleTheme}>
-        <SunIcon className="w-6 h-6 block dark:hidden" />
-        <MoonIcon className="w-6 h-6 hidden dark:block fill-white" />
+        <SunIcon className="w-6 h-6 hidden dark:block text-white" />
+        <MoonIcon className="w-6 h-6 block dark:hidden" />
       </NavButton>
     </GenericNavBar>
   );
