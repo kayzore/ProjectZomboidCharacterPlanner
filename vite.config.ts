@@ -5,6 +5,7 @@ import * as path from 'path';
 // https://vitejs.dev/config/
 // https://vitest.dev/config/
 export default defineConfig({
+  base: process.env.CI ? "/ProjectZomboidCharacterPlanner/" : "/",
   plugins: [react()],
 	resolve: {
     alias: {
