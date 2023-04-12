@@ -11,9 +11,9 @@
     "package:predeploy" : "npm run build",
     "package:deploy" : "gh-pages -d dist",
     "preview": "vite preview",
-    "test": "vitest",
-    "test:coverage": "vitest run --coverage.enabled",
-    "test:coverage:ci": "vitest run --coverage.enabled --coverage.reporter=lcov"
+    "test": "vitest --mode testing",
+    "test:coverage": "vitest run --coverage.enabled --mode testing",
+    "test:coverage:ci": "vitest run --coverage.enabled --coverage.reporter=lcov --mode testing"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.13",
