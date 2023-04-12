@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react';
 import Link from "@shared/components/Link";
 
 describe("shared -> components -> Link", () => {
-  const shouldBeAnchorWithChildren = (expectedRole: string, expectedChildren: string) => {
+  const shouldBeAnchorWithChildren = (expectedRole: string, expectedChildren: string): void => {
     expect(screen.getByRole(expectedRole)).toBeDefined();
     expect(screen.getByRole(expectedRole).textContent).toBe(expectedChildren);
   };
