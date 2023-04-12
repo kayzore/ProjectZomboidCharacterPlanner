@@ -1,3 +1,4 @@
+import { ComponentPropsWithoutRef, FunctionComponent } from "react";
 import clsx from "clsx";
 
 import { Trait } from "@app/types";
@@ -8,9 +9,9 @@ type Props = {
   trait: Trait,
   onTraitClick: (trait: Trait) => void,
   className?: string | object,
-} & React.HtmlHTMLAttributes<HTMLLIElement>;
+} & ComponentPropsWithoutRef<"li">;
 
-const TraitItem: React.FunctionComponent<Props> = (props: Props) => {
+const TraitItem: FunctionComponent<Props> = (props: Props) => {
   const { onTraitClick, trait, className = null, ...rest } = props;
   const { translate } = useLocale();
 

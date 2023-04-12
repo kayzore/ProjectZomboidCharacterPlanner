@@ -1,11 +1,13 @@
+import { FunctionComponent, ReactNode } from "react";
+
 import Link from "@shared/components/Link";
 
 type NavBarProps = {
-  children?: React.ReactNode,
+  children?: ReactNode,
   title: string,
 };
 
-const NavBar: React.FunctionComponent<NavBarProps> = (props: NavBarProps) => {
+const NavBar: FunctionComponent<NavBarProps> = (props: NavBarProps) => {
   const { children, title } = props;
 
   return (

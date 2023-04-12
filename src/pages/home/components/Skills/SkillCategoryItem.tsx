@@ -1,3 +1,4 @@
+import { FunctionComponent } from "react";
 import { Skill, SkillCategory } from "@app/types/skill.type";
 import { SkillItem } from "@pages/home/components";
 import { useLocale } from "@app/hooks";
@@ -7,7 +8,7 @@ type Props = {
   skills: Skill[],
 };
 
-const SkillCategoryItem: React.FunctionComponent<Props> = (props: Props) => {
+const SkillCategoryItem: FunctionComponent<Props> = (props: Props) => {
   const { category, skills } = props;
   const { translate } = useLocale();
 

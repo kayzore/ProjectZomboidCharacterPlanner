@@ -1,4 +1,4 @@
-import { createContext, FunctionComponent, ReactNode } from "react";
+import { createContext, FunctionComponent, PropsWithChildren } from "react";
 
 import { Func } from "@shared/types";
 import { useLocalStorage } from "@app/hooks";
@@ -10,10 +10,6 @@ type Context = {
   setTheme: Func<[Theme], void>,
 };
 
-type ThemeContextProps = {
-  children: ReactNode
-};
-
 export type Theme = "default" | "dark";
 
 const ThemeContext = createContext({
@@ -21,7 +17,7 @@ const ThemeContext = createContext({
   setTheme: () => void 0
 } as Context);
 
-const ThemeProvider: FunctionComponent<ThemeContextProps> = (props: ThemeContextProps) => {
+const ThemeProvider: FunctionComponent<PropsWithChildren> = (props: PropsWithChildren) => {
   const { children } = props;
   const [theme, setTheme] = useLocalStorage<Theme>("theme", DefaultTheme);
 

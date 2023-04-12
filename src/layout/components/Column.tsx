@@ -1,15 +1,13 @@
-import React from "react";
+import { ComponentPropsWithoutRef, FunctionComponent, PropsWithChildren } from "react";
 import clsx from "clsx";
 
-type Props = {
-  children: React.ReactElement | React.ReactElement[],
-} & React.HtmlHTMLAttributes<HTMLDivElement>;
+type Props = PropsWithChildren & ComponentPropsWithoutRef<"div">;
 
-export const Column: React.FunctionComponent<Props> = (props: Props) => {
-  const { children, ...otherProps } = props;
+export const Column: FunctionComponent<Props> = (props: Props) => {
+  const { children, ...rest } = props;
 
   return (
-    <div className={clsx("flex flex-col p-8 w-full", otherProps.className)}>
+    <div className={clsx("flex flex-col p-8 w-full", rest.className)}>
       {children}
     </div>
   );

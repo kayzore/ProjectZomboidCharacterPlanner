@@ -1,3 +1,4 @@
+import { FunctionComponent } from "react";
 import clsx from "clsx";
 
 import { Trait } from "@app/types";
@@ -9,7 +10,7 @@ type Props = {
   onTraitClick: (trait: Trait) => void,
 };
 
-const TraitsList: React.FunctionComponent<Props> = (props: Props) => {
+const TraitsList: FunctionComponent<Props> = (props: Props) => {
   const { activeTraits, traits, onTraitClick } = props;
 
   return (

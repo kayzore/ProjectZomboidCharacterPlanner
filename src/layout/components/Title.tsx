@@ -1,10 +1,9 @@
-import { FunctionComponent, ReactElement } from "react";
+import { FunctionComponent, PropsWithChildren, ReactElement } from "react";
 
 type Props = {
   ReactElement: ReactElement,
-  children?: ReactElement | ReactElement[],
   title: string,
-};
+} & PropsWithChildren;
 
 export const Title: FunctionComponent<Props> = (props: Props) => {
   const { children = null, ReactElement, title } = props;

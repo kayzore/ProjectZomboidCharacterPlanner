@@ -1,3 +1,4 @@
+import { ComponentPropsWithoutRef, FunctionComponent } from "react";
 import clsx from "clsx";
 
 import { Skill } from "@app/types/skill.type";
@@ -7,9 +8,9 @@ import { useLocale } from "@app/hooks";
 type Props = {
   skill: Skill,
   className?: string | object,
-} & React.HtmlHTMLAttributes<HTMLLIElement>;
+} & ComponentPropsWithoutRef<"li">;
 
-const SkillItem: React.FunctionComponent<Props> = (props: Props) => {
+const SkillItem: FunctionComponent<Props> = (props: Props) => {
   const { className = null, skill, ...rest } = props;
   const { translate } = useLocale();
 

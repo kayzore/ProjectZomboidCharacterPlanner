@@ -1,4 +1,4 @@
-import { createContext, FunctionComponent, ReactElement, useEffect, useState } from "react";
+import { createContext, FunctionComponent, PropsWithChildren, useEffect, useState } from "react";
 
 import { flattenObject } from '@shared/helpers';
 import { Locale } from "@app/types";
@@ -57,10 +57,6 @@ type Context = {
   setTranslations: (translations: Dictionary<string>) => void
 };
 
-type Props = {
-  children: ReactElement | ReactElement[]
-};
-
 const TranslationContext = createContext({
   locale: DefaultLocale,
   translations: {},
@@ -68,7 +64,7 @@ const TranslationContext = createContext({
   setTranslations: () => void 0,
 } as Context);
 
-const TranslationProvider: FunctionComponent<Props> = (props: Props) => {
+const TranslationProvider: FunctionComponent<PropsWithChildren> = (props: PropsWithChildren) => {
   const [locale , setLocale] = useLocalStorage<Locale>("locale", DefaultLocale);
   const [translations, setTranslations] = useState(getTranslationDictionary(DefaultLocale));
 
