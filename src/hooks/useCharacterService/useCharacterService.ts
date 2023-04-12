@@ -1,14 +1,11 @@
 import { useMemo, useState } from "react";
 import { v4 as uuid } from "uuid";
 
-import { Character } from "@app/types/character.type";
-import { Occupation } from "@app/types/occupation.type";
-import { Skill } from "@app/types/skill.type";
+import { Character, Occupation, Skill, Trait } from "@app/types";
 import { Func } from "@shared/types";
 import { Skills } from "@mock/skills";
-import {Trait} from "@app/types";
 
-type UseCharacterService = {
+export type UseCharacterService = {
   character: Character,
   characterFullSkills: Skill[],
   characterRemainingPoints: number,

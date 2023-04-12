@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { Func } from "@shared/types";
 
-type UseLocalStorage<T> = [value: T | null, setValue: Func<[T], void>];
+export type UseLocalStorage<T> = [value: T | null, setValue: Func<[T], void>];
 
 /**
  * useLocalStorage hook working with internal state can store and update value inside the browser local storage.

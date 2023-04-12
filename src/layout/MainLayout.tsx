@@ -11,7 +11,6 @@ const MainLayout: FunctionComponent<Props> = (props: Props) => {
 
   return (
     <>
-
       <header>
         <NavBar />
       </header>
