@@ -1,9 +1,15 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { act, renderHook } from '@testing-library/react';
 
-import { useLocalStorage } from "@app/hooks";
+import { UseLocalStorage, useLocalStorage } from "@app/hooks";
 
 describe("hooks -> useLocalStorage", () => {
+  const initAndUpdateValue = (expectedInitialValue: string, expectedUpdatedValue: string): UseLocalStorage<string> => {
+    const { result } = renderHook(() => useLocalStorage("test", expectedInitialValue));
+    act(() => result.current[1](expectedUpdatedValue));
+    return result.current;
+  };
+
   beforeEach(() => {
     window.localStorage.clear();
   });
@@ -38,9 +44,7 @@ describe("hooks -> useLocalStorage", () => {
     const expectedUpdatedValue = "updated-value";
 
     // WHEN
-    const { result } = renderHook(() => useLocalStorage("test", expectedInitialValue));
-    act(() => result.current[1](expectedUpdatedValue));
-    const [value] = result.current;
+    const [value] = initAndUpdateValue(expectedInitialValue, expectedUpdatedValue);
 
     // THEN
     expect(value).toBe(expectedUpdatedValue);
@@ -52,8 +56,7 @@ describe("hooks -> useLocalStorage", () => {
     const expectedUpdatedValue = "updated-value";
 
     // WHEN
-    const { result } = renderHook(() => useLocalStorage("test", expectedInitialValue));
-    act(() => result.current[1](expectedUpdatedValue));
+    initAndUpdateValue(expectedInitialValue, expectedUpdatedValue);
 
     // THEN
     expect(JSON.parse(window.localStorage.getItem("test") || "")).toBe(expectedUpdatedValue);
