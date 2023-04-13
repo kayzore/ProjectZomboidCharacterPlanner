@@ -17,7 +17,7 @@ describe("shared -> components -> Title", () => {
 
       // THEN
       expect(getByRole(container, expectedRole)).toBeDefined();
-      expect(getByRole(container, expectedRole).textContent).toBe(expectedTitleValue);
+      expect(getByRole(container, expectedRole, { name: expectedTitleValue })).toBeDefined();
     });
   });
 
