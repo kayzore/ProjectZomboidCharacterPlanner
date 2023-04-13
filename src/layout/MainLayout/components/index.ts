@@ -1,3 +1,4 @@
 export * from './Column';
-export * from './Separator';
 export * from './ColumnTitle';
+export * from './NavBar';
+export * from './Separator';

@@ -1,8 +1,8 @@
 import { FunctionComponent, PropsWithChildren } from "react";
 
-import NavBar from "@layout/components/NavBar";
+import { NavBar } from "@layout/MainLayout";
 
-const MainLayout: FunctionComponent<PropsWithChildren> = (props: PropsWithChildren) => {
+export const MainLayout: FunctionComponent<PropsWithChildren> = (props: PropsWithChildren) => {
   const { children } = props;
 
   return (
@@ -17,5 +17,3 @@ const MainLayout: FunctionComponent<PropsWithChildren> = (props: PropsWithChildr
     </>
   );
 };
-
-export default MainLayout;

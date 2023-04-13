@@ -2,7 +2,7 @@ import { ComponentPropsWithoutRef, FunctionComponent } from "react";
 import clsx from "clsx";
 
 import { Skill } from "@app/types/skill.type";
-import { Separator } from "@layout/components";
+import { Separator } from "@layout/MainLayout";
 import { useLocale } from "@app/hooks";
 
 type Props = {

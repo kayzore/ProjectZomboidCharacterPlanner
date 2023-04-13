@@ -1,11 +1,9 @@
 import { FunctionComponent } from "react";
 
-import { useLocale } from "@app/hooks";
 import { PositiveTraits, NegativeTraits } from "@mock/index";
-import MainLayout from "@layout/MainLayout";
-import { Column, Separator, ColumnTitle } from "@app/layout/components";
+import { Column, MainLayout, Separator, ColumnTitle } from "@layout/MainLayout";
 import { OccupationContainer, RemainingPoints, SkillsList, TraitsList } from "@pages/home/components";
-import { useCharacterService } from "@app/hooks";
+import { useCharacterService, useLocale } from "@app/hooks";
 
 const HomePage: FunctionComponent = () => {
   const { translate } = useLocale();

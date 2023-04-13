@@ -4,11 +4,11 @@ import { SunIcon } from "@heroicons/react/24/outline";
 import { MoonIcon } from "@heroicons/react/24/solid";
 
 import { NavButton, NavDropDown, NavBar as GenericNavBar, NavDropDownItem, NavLink } from "@shared/components/NavBar";
-import { Separator } from "@layout/components/Separator";
+import { Separator } from "@layout/MainLayout";
 import { GitHubIcon } from "@shared/icons";
 import { useLocale, useTheme } from "@app/hooks";
 
-const NavBar: FunctionComponent = () => {
+export const NavBar: FunctionComponent = () => {
   const { theme, setTheme } = useTheme();
   const { locale, setLocale } = useLocale();
 
@@ -43,5 +43,3 @@ const NavBar: FunctionComponent = () => {
     </GenericNavBar>
   );
 };
-
-export default NavBar;
