@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 
 import HomePage from "@pages/home/HomePage";
 import { ThemeProvider, TranslationProvider } from "@app/providers";
-import {Occupations} from "@app/mock";
+import { Occupations } from "@app/mock";
 
 describe("pages -> HomePage", () => {
   beforeAll(() => {
