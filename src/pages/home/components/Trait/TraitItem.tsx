@@ -6,19 +6,29 @@ import { useLocale } from "@app/hooks";
 import { pointsStyle } from "@shared/styles/points.style";
 
 type Props = {
+  canBeSelected: boolean,
+  className?: string | object,
   trait: Trait,
   onTraitClick: (trait: Trait) => void,
-  className?: string | object,
 } & ComponentPropsWithoutRef<"li">;
 
 const TraitItem: FunctionComponent<Props> = (props: Props) => {
-  const { onTraitClick, trait, className = null, ...rest } = props;
+  const { canBeSelected, onTraitClick, trait, className = null, ...rest } = props;
   const { translate } = useLocale();
+
+  const handleTraitClick = (): void => {
+    if (canBeSelected) {
+      onTraitClick(trait);
+    }
+  };
 
   return (
     <li
-      className={clsx("flex items-center h-8 rounded-md my-1 px-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:cursor-pointer", className)}
-      onClick={(): void => onTraitClick(trait)}
+      className={clsx("flex items-center h-8 rounded-md my-1 px-2 hover:bg-slate-100 dark:hover:bg-slate-700", {
+        'hover:cursor-pointer': canBeSelected,
+        'line-through hover:cursor-not-allowed': !canBeSelected,
+      }, className)}
+      onClick={handleTraitClick}
       {...rest}
     >
       <img src={`assets/images/traits/${trait.icon}`} width="16" height="16" />

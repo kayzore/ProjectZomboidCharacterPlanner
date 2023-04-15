@@ -2,9 +2,10 @@ import { beforeAll, describe, it, expect } from 'vitest';
 import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import HomePage from "@pages/home/HomePage";
+import {HobbyTrait, TraitId} from "@app/types";
 import { ThemeProvider, TranslationProvider } from "@app/providers";
-import { Occupations } from "@app/mock";
+import HomePage from "@pages/home/HomePage";
+import { AdrenalineJunkieTrait, HobbyTraits, Occupations } from "@app/mock";
 
 describe("pages -> HomePage", () => {
   beforeAll(() => {
@@ -48,6 +49,32 @@ describe("pages -> HomePage", () => {
 
       // THEN
       expect(screen.getByTestId(expectedDataTestId).textContent).toBe(expectedRemainingPoints);
+    });
+  });
+
+  describe("-> Selectable traits", () => {
+    it("Should highlight excluded traits when user click on trait", async () => {
+      const byOccupationType = (hobbyTrait: HobbyTrait): boolean => hobbyTrait.type.includes('Occupation');
+      const byHobbyTraitId = (hobbyTrait: HobbyTrait, expectedClickedTraitId: TraitId): boolean => hobbyTrait.id === expectedClickedTraitId;
+      // GIVEN
+      const user = userEvent.setup();
+      const expectedClickedTrait = AdrenalineJunkieTrait;
+      const expectedExcludedTraitIds = expectedClickedTrait.excluded;
+
+      // WHEN
+      await act(async () => await user.click(screen.getByTestId(expectedClickedTrait.id)));
+
+      // THEN
+      expectedExcludedTraitIds.forEach((expectedClickedTraitId: TraitId) => {
+        const occupationHobbyTrait = HobbyTraits
+          .filter(byOccupationType)
+          .find((hobbyTrait) => byHobbyTraitId(hobbyTrait, expectedClickedTraitId));
+
+        if (!occupationHobbyTrait) {
+          // if check because hobby traits with Hobby type should not be displayed on screen but can be excluded by trait
+          expect(screen.getByTestId(expectedClickedTraitId).className).toContain("line-through");
+        }
+      });
     });
   });
 });
