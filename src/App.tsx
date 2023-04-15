@@ -1,9 +1,9 @@
-import React from "react";
+import { FunctionComponent } from "react";
 
 import HomePage from "@app/pages/home/HomePage";
 import { ThemeProvider, TranslationProvider } from "./providers";
 
-const App: React.FunctionComponent = () => (
+const App: FunctionComponent = () => (
   <TranslationProvider>
     <ThemeProvider>
       <HomePage />

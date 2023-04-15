@@ -1,3 +1,5 @@
+import { FunctionComponent } from "react";
+
 import { Skill } from "@app/types/skill.type";
 import { SkillCategoryItem } from "@pages/home/components";
 
@@ -5,7 +7,7 @@ type Props = {
   skills: Skill[],
 };
 
-const SkillsList: React.FunctionComponent<Props> = (props: Props) => {
+const SkillsList: FunctionComponent<Props> = (props: Props) => {
   const { skills } = props;
 
   return (

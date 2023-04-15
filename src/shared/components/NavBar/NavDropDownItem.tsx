@@ -1,12 +1,13 @@
+import { FunctionComponent, PropsWithChildren } from "react";
 import { Menu } from "@headlessui/react";
+
 import { Action } from "@app/shared/types";
 
-type NavDropDownItemProps = {
-  children?: React.ReactNode;
+type NavDropDownItemProps = PropsWithChildren<{
   clicked?: Action<[]>
-};
+}>;
 
-const NavDropDownItem: React.FunctionComponent<NavDropDownItemProps> = (props: NavDropDownItemProps) => {
+const NavDropDownItem: FunctionComponent<NavDropDownItemProps> = (props: NavDropDownItemProps) => {
   const { children, clicked } = props;
 
   return (

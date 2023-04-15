@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { FunctionComponent, useState } from "react";
 
 import clsx from "clsx";
 
@@ -10,7 +10,7 @@ type Props = {
   onOccupationClick: (occupation: Occupation) => void;
 };
 
-const OccupationContainer: React.FunctionComponent<Props> = (props: Props) => {
+const OccupationContainer: FunctionComponent<Props> = (props: Props) => {
   const { onOccupationClick } = props;
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 

@@ -1,10 +1,8 @@
-import { AnchorHTMLAttributes, DetailedHTMLProps, FunctionComponent, ReactNode } from "react";
+import { ComponentPropsWithoutRef, FunctionComponent, PropsWithChildren } from "react";
 
 import { localPath } from "@shared/helpers/url.helper";
 
-type Props = {
-  children: ReactNode,
-} & DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>;
+type Props = PropsWithChildren & ComponentPropsWithoutRef<"a">;
 
 const Link: FunctionComponent<Props> = (props: Props) => {
   const { children, href, ...rest } = props;

@@ -6,7 +6,7 @@ import Link from "@shared/components/Link";
 describe("shared -> components -> Link", () => {
   const shouldBeAnchorWithChildren = (expectedRole: string, expectedChildren: string): void => {
     expect(screen.getByRole(expectedRole)).toBeDefined();
-    expect(screen.getByRole(expectedRole).textContent).toBe(expectedChildren);
+    expect(screen.getByRole(expectedRole, { name: expectedChildren })).toBeDefined();
   };
 
   it("Should return a link (<a>) with the good children", () => {

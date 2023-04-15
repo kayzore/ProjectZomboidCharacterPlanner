@@ -1,14 +1,13 @@
-import { Fragment } from "react";
+import { Fragment, FunctionComponent, PropsWithChildren } from "react";
 
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 
-type NavDropDownProps = {
-  children?: React.ReactNode;
+type NavDropDownProps = PropsWithChildren<{
   title: string;
-};
+}>;
 
-const NavDropDown: React.FunctionComponent<NavDropDownProps> = (props: NavDropDownProps) => {
+const NavDropDown: FunctionComponent<NavDropDownProps> = (props: NavDropDownProps) => {
   const { children, title } = props;
 
   return (

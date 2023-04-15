@@ -1,13 +1,15 @@
+import { ComponentPropsWithoutRef, FunctionComponent } from "react";
+import clsx from "clsx";
+
 import { useLocale } from "@app/hooks";
 import { Occupation } from "@app/types";
-import clsx from "clsx";
 
 type OccupationItemProps = {
   occupation: Occupation,
   onOccupationClick: (occupation: Occupation) => void;
-} & React.HtmlHTMLAttributes<HTMLLIElement>;
+} & ComponentPropsWithoutRef<"li">;
 
-const OccupationItem: React.FunctionComponent<OccupationItemProps> = (props: OccupationItemProps) => {
+const OccupationItem: FunctionComponent<OccupationItemProps> = (props: OccupationItemProps) => {
   const { occupation, onOccupationClick, className, ...rest } = props;
   const { translate } = useLocale();
 
