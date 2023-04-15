@@ -1,24 +1,23 @@
-import { FunctionComponent, ReactNode } from "react";
+import { FunctionComponent, PropsWithChildren } from "react";
 
 import GenericTitle from "@shared/components/Title";
 
-type Props = {
-  asideChildren?: ReactNode,
+type Props = PropsWithChildren<{
   title: string,
-};
+}>;
 
 export const ColumnTitle: FunctionComponent<Props> = (props: Props): JSX.Element => {
-  const { asideChildren = null, title } = props;
+  const { children = null, title } = props;
 
   const Title = (
     <GenericTitle as="h2" className="text-xl font-medium">{title}</GenericTitle>
   );
 
-  if (asideChildren) {
+  if (children) {
     return (
       <div className="flex items-center justify-between">
         {Title}
-        {asideChildren}
+        {children}
       </div>
     );
   }

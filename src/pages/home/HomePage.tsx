@@ -32,10 +32,9 @@ const HomePage: FunctionComponent = () => {
         </Column>
 
         <Column className="bg-white shadow-md border dark:border-none dark:bg-slate-800 rounded-lg">
-          <ColumnTitle
-            asideChildren={<RemainingPoints points={characterRemainingPoints} />}
-            title={translate("skills.title")}
-          />
+          <ColumnTitle title={translate("skills.title")}>
+            <RemainingPoints points={characterRemainingPoints} />
+          </ColumnTitle>
           <SkillsList skills={characterFullSkills} />
         </Column>
       </div>
