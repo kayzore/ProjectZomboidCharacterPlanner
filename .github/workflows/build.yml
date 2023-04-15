@@ -5,8 +5,6 @@ name: Build
 
 on:
   workflow_call:
-  pull_request:
-    branches: [ "**" ]
 
 jobs:
   build:
