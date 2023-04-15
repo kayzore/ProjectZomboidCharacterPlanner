@@ -1,11 +1,35 @@
 import { Skill } from "@app/types/skill.type";
-import { Trait } from "@app/types/trait.type";
+import { HobbyTrait, Trait } from "@app/types/trait.type";
+
+export type OccupationId =
+  | 'UNEMPLOYED'
+  | 'FIRE_OFFICER'
+  | 'POLICE_OFFICER'
+  | 'PARK_RANGER'
+  | 'CONSTRUCTION_WORKER'
+  | 'SECURITY_GUARD'
+  | 'CARPENTER'
+  | 'BURGLAR'
+  | 'CHEF'
+  | 'REPAIRMAN'
+  | 'FARMER'
+  | 'FISHERMAN'
+  | 'DOCTOR'
+  | 'VETERAN'
+  | 'NURSE'
+  | 'LUMBERJACK'
+  | 'FITNESS_INSTRUCTOR'
+  | 'BURGER_FLIPPER'
+  | 'ELECTRICIAN'
+  | 'ENGINEER'
+  | 'METALWORKER'
+  | 'MECHANIC';
 
 export interface Occupation {
   /**
    * Gets the occupation id.
    */
-  id: string,
+  id: OccupationId,
 
   /**
    * Gets the occupation name.
@@ -35,5 +59,5 @@ export interface Occupation {
   /**
    * Gets the occupation traits.
    */
-  traits: Trait[],
+  traits: Trait[] | HobbyTrait[],
 }
