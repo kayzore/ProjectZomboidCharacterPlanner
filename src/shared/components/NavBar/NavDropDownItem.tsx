@@ -3,9 +3,9 @@ import { Menu } from "@headlessui/react";
 
 import { Action } from "@app/shared/types";
 
-type NavDropDownItemProps = {
+type NavDropDownItemProps = PropsWithChildren<{
   clicked?: Action<[]>
-} & PropsWithChildren;
+}>;
 
 const NavDropDownItem: FunctionComponent<NavDropDownItemProps> = (props: NavDropDownItemProps) => {
   const { children, clicked } = props;
