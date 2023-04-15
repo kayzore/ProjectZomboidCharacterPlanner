@@ -3,10 +3,12 @@ import { useContext } from "react";
 import { TranslationContext } from "@app/providers";
 import { Locale } from "@app/types";
 
+export type TranslateFn = (key: string) => string;
+
 type UseLocale = {
   locale: Locale,
   setLocale: (newLocale: Locale) => void,
-  translate: (key: string) => string,
+  translate: TranslateFn,
 };
 
 export const useLocale = (): UseLocale => {

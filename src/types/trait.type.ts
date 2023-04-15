@@ -1,6 +1,6 @@
 import { OccupationId } from "@app/types/occupation.type";
 
-type TraitId =
+export type TraitId =
   | 'ADRENALINE_JUNKIE'
   | 'ATHLETIC'
   | 'BRAVE'
