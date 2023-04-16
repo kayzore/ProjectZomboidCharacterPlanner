@@ -11,15 +11,30 @@ env:
   VITE_BASE_PATH: /ProjectZomboidCharacterPlanner/${{ github.event.pull_request.node_id }}/
 
 jobs:
-  build:
-    name: Build, Lint and Test branch
-    uses: ./.github/workflows/build-and-test.yml
-    secrets:
-      CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
+  build-lint-test:
+    name: Build and Lint and Test pull request
+    uses: ./.github/workflows/build-lint-test.yml
+
+  coverage-reporter:
+    name: Codacy coverage reporter
+    runs-on: ubuntu-latest
+    needs: build-lint-test
+    steps:
+      - name: Download coverage artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: coverage-artifact
+
+      - name: Run codacy-coverage-reporter
+        uses: codacy/codacy-coverage-reporter-action@v1
+        with:
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          coverage-reports: coverage/lcov.info
 
   deploy:
+    name: Deploy testing environment
     runs-on: ubuntu-latest
-    needs: build
+    needs: build-lint-test
     steps:
       - name: Download dist artifact
         uses: actions/download-artifact@v3
@@ -34,6 +49,7 @@ jobs:
           destination_dir: ./${{ github.event.pull_request.node_id }}
 
   comment:
+    name: Comment PR with testing environment url
     runs-on: ubuntu-latest
     needs: deploy
     steps:
