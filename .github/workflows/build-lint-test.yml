@@ -3,10 +3,16 @@
 
 on:
   workflow_call:
-
+    inputs:
+      VITE_BASE_PATH:
+        required: true
+        type: string
 jobs:
   build-lint-test:
     runs-on: ubuntu-latest
+
+    env:
+      VITE_BASE_PATH: ${{ inputs.VITE_BASE_PATH }}
 
     strategy:
       matrix:

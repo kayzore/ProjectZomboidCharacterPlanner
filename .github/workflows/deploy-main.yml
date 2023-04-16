@@ -4,12 +4,11 @@ on:
   push:
     branches: [ "main" ]
 
-env:
-  VITE_BASE_PATH: /ProjectZomboidCharacterPlanner/main/
-
 jobs:
   build-lint-test:
     uses: ./.github/workflows/build-lint-test.yml
+    with:
+      VITE_BASE_PATH: /ProjectZomboidCharacterPlanner/main/
 
   coverage-reporter:
     uses: ./.github/workflows/codacy-coverage-reporter.yml
