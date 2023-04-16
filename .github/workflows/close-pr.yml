@@ -1,4 +1,4 @@
-name: Destroy Testing Environment
+name: Destroy Testing Environment of a closed pull request
 
 on:
   pull_request:
