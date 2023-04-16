@@ -6,7 +6,6 @@ on:
 
 jobs:
   build-lint-test:
-    name: Build, Lint and Test branch
     runs-on: ubuntu-latest
 
     strategy:
