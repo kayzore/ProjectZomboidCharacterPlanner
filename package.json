@@ -13,7 +13,7 @@
     "preview": "vite preview",
     "test": "vitest --mode testing",
     "test:coverage": "vitest run --coverage.enabled --mode testing",
-    "test:coverage:ci": "vitest run --coverage.enabled --coverage.reporter=lcov --mode testing"
+    "test:coverage:ci": "vitest run --coverage.enabled --coverage.reporter=lcov"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.14",
