@@ -2,7 +2,7 @@ import { beforeAll, describe, it, expect } from 'vitest';
 import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import {HobbyTrait, TraitId} from "@app/types";
+import { HobbyTrait, TraitId } from "@app/types";
 import { ThemeProvider, TranslationProvider } from "@app/providers";
 import HomePage from "@pages/home/HomePage";
 import { AdrenalineJunkieTrait, HobbyTraits, Occupations } from "@app/mock";
@@ -53,7 +53,7 @@ describe("pages -> HomePage", () => {
   });
 
   describe("-> Selectable traits", () => {
-    it("Should highlight excluded traits when user click on trait", async () => {
+    it("Should highlight excluded traits of a selected trait when clicked", async () => {
       const byOccupationType = (hobbyTrait: HobbyTrait): boolean => hobbyTrait.type.includes('Occupation');
       const byHobbyTraitId = (hobbyTrait: HobbyTrait, expectedClickedTraitId: TraitId): boolean => hobbyTrait.id === expectedClickedTraitId;
       // GIVEN

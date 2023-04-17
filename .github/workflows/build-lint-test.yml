@@ -1,17 +1,18 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# This reusable workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
-name: Build
-
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "**" ]
-
+  workflow_call:
+    inputs:
+      VITE_BASE_PATH:
+        required: true
+        type: string
 jobs:
-  build:
+  build-lint-test:
     runs-on: ubuntu-latest
+
+    env:
+      VITE_BASE_PATH: ${{ inputs.VITE_BASE_PATH }}
 
     strategy:
       matrix:
@@ -46,14 +47,14 @@ jobs:
       if: steps.cache-nodemodules.outputs.cache-hit != 'true'
       run: npm ci
 
-    - name: Check typescript
+    - name: Run checks
       run: npm run check
-
-    - name: Build web app
-      run: npm run build
 
     - name: Run tests coverage
       run: npm run test:coverage:ci
+
+    - name: Run build
+      run: npm run build
 
     - name: Archive production artifacts
       uses: actions/upload-artifact@v3
@@ -63,24 +64,8 @@ jobs:
           dist
           !dist/**/*.md
 
-    - name: Run codacy-coverage-reporter
-      uses: codacy/codacy-coverage-reporter-action@v1
+    - name: Archive coverage artifacts
+      uses: actions/upload-artifact@v3
       with:
-        project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-        coverage-reports: coverage/lcov.info
-
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    if: github.ref == 'refs/heads/main'
-    steps:
-      - name: Download a single artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: dist-artifact
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+        name: coverage-artifact
+        path: ./coverage

@@ -21,7 +21,7 @@ describe("helpers", () => {
     it("localPath -> Should return the path for a given route with the local environment base path included", () => {
       // GIVEN
       const expectedRoute = "/expected-route";
-      const expectedPath = "/test-base-path/expected-route";
+      const expectedPath = `${process.env.VITE_BASE_PATH}/expected-route`.replace("//", "/");
 
       // WHEN
       const result = localPath(expectedRoute);

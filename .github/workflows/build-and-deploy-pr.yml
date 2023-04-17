@@ -1,0 +1,47 @@
+name: Build and Deploy pull request
+
+on:
+  pull_request:
+    branches: [ "**" ]
+
+jobs:
+  build-lint-test:
+    uses: ./.github/workflows/build-lint-test.yml
+    with:
+      VITE_BASE_PATH: /ProjectZomboidCharacterPlanner/${{ github.event.pull_request.node_id }}/
+
+  coverage-reporter:
+    uses: ./.github/workflows/codacy-coverage-reporter.yml
+    needs: build-lint-test
+    secrets:
+      CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
+
+  deploy:
+    name: Deploy testing environment
+    runs-on: ubuntu-latest
+    needs: build-lint-test
+    steps:
+      - name: Download dist artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: dist-artifact
+
+      - name: Deploy gh pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          destination_dir: ./${{ github.event.pull_request.node_id }}
+
+  comment:
+    name: Comment PR with testing environment url
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          message: |
+            :rocket: Testing environment available here: https://eastrall.github.io/ProjectZomboidCharacterPlanner/${{ github.event.pull_request.node_id }}/
+          comment_tag: testing_environment_url
+          mode: recreate
