@@ -16,26 +16,9 @@ jobs:
     secrets:
       CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
 
-  destroy: # destroy job can be removed after first run
-    runs-on: ubuntu-latest
-    needs: build-lint-test
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Create empty dist folder
-        run: mkdir dist
-
-      - name: Deploy gh pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          destination_dir: ./
-
   deploy:
     runs-on: ubuntu-latest
-    needs: destroy # should be 'build' after the first run
+    needs: build-lint-test
     steps:
       - name: Download dist artifact
         uses: actions/download-artifact@v3
